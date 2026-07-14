@@ -43,6 +43,7 @@ Do reflection logs improve explainability and post-trade diagnosis?
 
 ## System Architecture
 
+```text
 Historical Data
        │
        ▼
@@ -59,9 +60,11 @@ Reflection Agent
        │
        ▼
 Decision Logs
+---
 
 ## Repository Structure
 
+```text
 .
 ├── data/
 ├── docs/
@@ -71,6 +74,7 @@ Decision Logs
 ├── outputs/
 ├── tests/
 └── README.md
+---
 
 ## Project Flow
 
