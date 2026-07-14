@@ -78,6 +78,7 @@ Decision Logs
 
 ## Project Flow
 
+```text
 Data Collection
       ↓
 Feature Engineering
@@ -91,6 +92,7 @@ Risk Evaluation
 Reflection Logging
       ↓
 Performance Analysis
+```
 
 ## Data Sources
 
