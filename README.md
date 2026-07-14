@@ -60,7 +60,7 @@ Reflection Agent
        │
        ▼
 Decision Logs
----
+```
 
 ## Repository Structure
 
@@ -74,7 +74,7 @@ Decision Logs
 ├── outputs/
 ├── tests/
 └── README.md
----
+```
 
 ## Project Flow
 
