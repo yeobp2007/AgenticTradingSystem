@@ -98,10 +98,10 @@ Performance Analysis
 
 | Dataset                  | Source        | Purpose            |
 | ------------------------ | ------------- | ------------------ |
-| Historical Prices        | Alpha Vantage | Backtesting        |
-| Technical Indicators     | Alpha Vantage | Trading signals    |
+| Historical Prices        | yfinance      | Backtesting        |
+| Technical Indicators     | Calculated    | Trading signals    |
 | News Sentiment           | Alpha Vantage | Sentiment analysis |
-| VIX                      | FRED          | Risk filtering     |
+| VIX                      | yfinance      | Risk filtering     |
 | Macroeconomic Indicators | FRED          | Risk management    |
 
 
