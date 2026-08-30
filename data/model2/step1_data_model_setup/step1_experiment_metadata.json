@@ -1,0 +1,159 @@
+{
+    "experiment_version": "AGENTIC_FRAMEWORK_CONFIG4_CONSENSUS_V2",
+    "feature_version": "STEP1_FEATURES_V1",
+    "target_version": "NET_OPEN_TO_CLOSE_BINARY_V1",
+    "decision_mode": "REPLICATION",
+    "significance_level": 0.05,
+    "source_file": "data\\cleaned_market_data.csv",
+    "source_file_sha256": "4221a3322ef5f465264a771c0feeef942f7430b539b060256abd55ef0ef8d06b",
+    "master_observations": 1505,
+    "aligned_observations": 1503,
+    "aligned_start_date": "2020-08-05",
+    "aligned_end_date": "2026-07-30",
+    "train_start_date": "2020-08-05",
+    "train_end_date": "2024-03-05",
+    "validation_start_date": "2024-03-06",
+    "validation_end_date": "2025-05-15",
+    "test_start_date": "2025-05-16",
+    "test_end_date": "2026-07-30",
+    "random_seed": 42,
+    "execution_specification": {
+        "initial_capital": 100000.0,
+        "transaction_cost_bps_per_side": 2.5,
+        "slippage_bps_per_side": 2.5,
+        "trading_days_per_year": 252,
+        "annual_risk_free_rate": 0.0,
+        "allow_short_selling": false,
+        "allow_overnight_positions": false,
+        "use_dynamic_position_sizing": false,
+        "entry_price_field": "Open",
+        "exit_price_field": "Close",
+        "fixed_position_fraction": 1.0
+    },
+    "split_specification": {
+        "train_fraction": 0.6,
+        "validation_fraction": 0.2,
+        "test_fraction": 0.2
+    },
+    "configuration_agents": {
+        "CONFIG_1_MA_EX_RF": [
+            "MA",
+            "EX",
+            "RF"
+        ],
+        "CONFIG_2_SM_EX_RF": [
+            "SM",
+            "EX",
+            "RF"
+        ],
+        "CONFIG_3_RM_EX_RF": [
+            "RM",
+            "EX",
+            "RF"
+        ],
+        "CONFIG_4_MA_SM_RM_EX_RF": [
+            "MA",
+            "SM",
+            "RM",
+            "EX",
+            "RF"
+        ]
+    },
+    "configuration_decision_policies": {
+        "CONFIG_1_MA_EX_RF": {
+            "analytical_agents": [
+                "MA"
+            ],
+            "resolution_mode": "DIRECT",
+            "required_buy_votes": 1,
+            "execution_agent": "EX",
+            "reflection_agent": "RF"
+        },
+        "CONFIG_2_SM_EX_RF": {
+            "analytical_agents": [
+                "SM"
+            ],
+            "resolution_mode": "DIRECT",
+            "required_buy_votes": 1,
+            "execution_agent": "EX",
+            "reflection_agent": "RF"
+        },
+        "CONFIG_3_RM_EX_RF": {
+            "analytical_agents": [
+                "RM"
+            ],
+            "resolution_mode": "DIRECT",
+            "required_buy_votes": 1,
+            "execution_agent": "EX",
+            "reflection_agent": "RF"
+        },
+        "CONFIG_4_MA_SM_RM_EX_RF": {
+            "analytical_agents": [
+                "MA",
+                "SM",
+                "RM"
+            ],
+            "resolution_mode": "MAJORITY_VOTE",
+            "required_buy_votes": 2,
+            "execution_agent": "EX",
+            "reflection_agent": "RF"
+        }
+    },
+    "agent_input_columns": {
+        "MA": [
+            "Open",
+            "previous_open",
+            "previous_high",
+            "previous_low",
+            "previous_close",
+            "previous_day_return",
+            "opening_gap"
+        ],
+        "SM": [
+            "Open",
+            "previous_open",
+            "previous_high",
+            "previous_low",
+            "previous_close",
+            "previous_day_return",
+            "opening_gap",
+            "previous_sentiment_mean",
+            "previous_sentiment_std",
+            "previous_news_count"
+        ],
+        "RM": [
+            "Open",
+            "previous_open",
+            "previous_high",
+            "previous_low",
+            "previous_close",
+            "previous_day_return",
+            "opening_gap",
+            "previous_volume",
+            "previous_volume_change",
+            "previous_vix",
+            "previous_cpi",
+            "previous_gdp",
+            "previous_unemployment"
+        ],
+        "EX": [
+            "Open",
+            "Close",
+            "gross_open_to_close_return",
+            "net_open_to_close_return"
+        ],
+        "RF": [
+            "Open",
+            "High",
+            "Low",
+            "Close",
+            "gross_open_to_close_return",
+            "net_open_to_close_return",
+            "target_profitable"
+        ]
+    },
+    "python_version": "3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pandas_version": "3.0.5",
+    "numpy_version": "1.26.4"
+}

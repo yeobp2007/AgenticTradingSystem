@@ -1,0 +1,15 @@
+Check Type,Check,Observed,Expected,Passed
+ARCHITECTURE,Every packet uses Configuration 4,302/302,302/302,True
+ARCHITECTURE,DecisionFusionRecord exists for every packet,302/302,302/302,True
+ARCHITECTURE,DecisionFusionRecord schema validation,True,True,True
+ARCHITECTURE,"MA, SM and RM participate in every packet",True,True,True
+ARCHITECTURE,"Every packet contains valid MA, SM and RM votes",True,True,True
+ARCHITECTURE,Required BUY votes,[2],[2],True
+ARCHITECTURE,DecisionFusion BUY count equals MA + SM + RM packet votes,302/302 matched,302/302 matched,True
+ARCHITECTURE,Final BUY iff DecisionFusion BUY votes >= 2,302/302 matched,302/302 matched,True
+ARCHITECTURE,EX executes iff final consensus vote is BUY,302/302 matched,302/302 matched,True
+ARCHITECTURE,RF completed every packet,302/302 completed,302/302 completed,True
+ARCHITECTURE,Portfolio capital continuity,True,True,True
+ARCHITECTURE,Configuration 4 starts from fresh initial capital,100000.0,100000.0,True
+ARCHITECTURE,Traceability score available every day,302,302,True
+LOGGING,Flattened daily vote log agrees with packets,302/302 matched,302/302 matched,True

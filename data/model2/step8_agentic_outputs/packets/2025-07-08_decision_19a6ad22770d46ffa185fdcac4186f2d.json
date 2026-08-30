@@ -1,0 +1,1255 @@
+{
+    "metadata": {
+        "decision_id": "decision_19a6ad22770d46ffa185fdcac4186f2d",
+        "symbol": "AMZN",
+        "decision_date": "2025-07-08",
+        "configuration_id": "CONFIG_4_MA_SM_RM_EX_RF",
+        "decision_mode": "REPLICATION",
+        "experiment_version": "AGENTIC_FRAMEWORK_CONFIG4_CONSENSUS_V2",
+        "feature_version": "STEP1_FEATURES_V1",
+        "dataset_version": "AMZN_CONFIG4_20250516_20260730_N302",
+        "created_at_utc": "2026-08-30T02:50:32.243643+00:00",
+        "random_seed": 42
+    },
+    "packet_status": "REFLECTED",
+    "market_data": {
+        "Open": 223.9199981689453,
+        "previous_open": 223.0,
+        "previous_high": 224.2899932861328,
+        "previous_low": 222.3699951171875,
+        "previous_close": 223.47000122070312,
+        "previous_day_return": 0.002107628792390681,
+        "opening_gap": 0.0020136794459393315,
+        "ma_previous_day_return": 0.002107628792390681,
+        "ma_opening_gap": 0.0020136794459393315,
+        "ma_previous_range_ratio": 0.00860985725984445,
+        "ma_previous_body_ratio": 0.002107628792390695,
+        "ma_previous_body_to_range": 0.24479253590189862,
+        "ma_previous_close_location": 0.5729203919605178,
+        "ma_previous_upper_shadow": 0.0036770944638102577,
+        "ma_previous_lower_shadow": 0.002825134003643498,
+        "ma_open_vs_previous_open": 0.004125552327109094,
+        "ma_close_return_lag_1": 0.00026855359030641957,
+        "ma_close_return_lag_2": 0.015869432167250785,
+        "ma_close_return_lag_3": -0.002449462616694653,
+        "ma_close_return_lag_5": -0.017510092291414314,
+        "ma_momentum_3": 0.013653245101922673,
+        "ma_momentum_5": 0.0007612994474788248,
+        "ma_momentum_10": 0.06571605044998474,
+        "ma_momentum_20": 0.07484006197162874,
+        "ma_mean_return_3": 0.004562841046954184,
+        "ma_mean_return_5": 0.00021112472879896148,
+        "ma_mean_return_10": 0.00648608292263767,
+        "ma_volatility_5": 0.012125163285559255,
+        "ma_volatility_10": 0.015041149382522323,
+        "ma_volatility_20": 0.015054673229339822,
+        "ma_mean_range_3": 0.010705377743065266,
+        "ma_mean_range_5": 0.014227777677905581,
+        "ma_mean_range_10": 0.01823760022797242,
+        "ma_gap_x_previous_return": 4.244088778907049e-06,
+        "ma_absolute_opening_gap": 0.0020136794459393315,
+        "ma_absolute_previous_return": 0.002107628792390681,
+        "ma_reversal_candidate": 0.0
+    },
+    "sentiment_data": {
+        "Open": 223.9199981689453,
+        "previous_open": 223.0,
+        "previous_high": 224.2899932861328,
+        "previous_low": 222.3699951171875,
+        "previous_close": 223.47000122070312,
+        "previous_day_return": 0.002107628792390681,
+        "opening_gap": 0.0020136794459393315,
+        "previous_sentiment_mean": 0.1473407777777778,
+        "previous_sentiment_std": 0.2757585894300383,
+        "previous_news_count": 9.0,
+        "sm_previous_day_return": 0.002107628792390681,
+        "sm_opening_gap": 0.0020136794459393315,
+        "sm_previous_range_ratio": 0.00860985725984445,
+        "sm_previous_body_ratio": 0.002107628792390695,
+        "sm_previous_body_to_range": 0.24479253590189862,
+        "sm_previous_close_location": 0.5729203919605178,
+        "sm_previous_upper_shadow": 0.0036770944638102577,
+        "sm_previous_lower_shadow": 0.002825134003643498,
+        "sm_open_vs_previous_open": 0.004125552327109094,
+        "sm_close_return_lag_1": 0.00026855359030641957,
+        "sm_close_return_lag_2": 0.015869432167250785,
+        "sm_close_return_lag_3": -0.002449462616694653,
+        "sm_close_return_lag_5": -0.017510092291414314,
+        "sm_momentum_3": 0.013653245101922673,
+        "sm_momentum_5": 0.0007612994474788248,
+        "sm_momentum_10": 0.06571605044998474,
+        "sm_momentum_20": 0.07484006197162874,
+        "sm_volatility_5": 0.012125163285559255,
+        "sm_volatility_10": 0.015041149382522323,
+        "sm_volatility_20": 0.015054673229339822,
+        "sm_mean_range_3": 0.010705377743065266,
+        "sm_mean_range_5": 0.014227777677905581,
+        "sm_mean_range_10": 0.01823760022797242,
+        "sm_news_available": 1.0,
+        "sm_log_news_count": 2.302585092994046,
+        "sm_sentiment_strength": 0.1473407777777778,
+        "sm_positive_sentiment": 1.0,
+        "sm_negative_sentiment": 0.0,
+        "sm_sentiment_consistency": 0.4523005150395935,
+        "sm_coverage_weighted_sentiment": 0.3392646785012595,
+        "sm_coverage_weighted_uncertainty": 0.6349576172866717,
+        "sm_sentiment_mean_lag_2": 0.1606475999999999,
+        "sm_sentiment_mean_lag_3": 0.1550876666666666,
+        "sm_sentiment_mean_lag_5": 0.04295,
+        "sm_sentiment_std_lag_2": 0.1092081546282144,
+        "sm_sentiment_std_lag_3": 0.1052295605496225,
+        "sm_sentiment_std_lag_5": 0.259330019760536,
+        "sm_news_count_lag_2": 5.0,
+        "sm_news_count_lag_3": 6.0,
+        "sm_news_count_lag_5": 7.0,
+        "sm_sentiment_change_1": -0.013306822222222098,
+        "sm_sentiment_change_3": -0.12995565079365082,
+        "sm_sentiment_mean_3": 0.15435868148148132,
+        "sm_sentiment_mean_5": 0.15666449460317458,
+        "sm_sentiment_mean_10": 0.1870355926984127,
+        "sm_sentiment_dispersion_3": 0.0066832958907701735,
+        "sm_sentiment_dispersion_5": 0.08304867998072014,
+        "sm_sentiment_dispersion_10": 0.07329778322702062,
+        "sm_news_mean_3": 6.666666666666667,
+        "sm_news_mean_5": 6.8,
+        "sm_news_mean_10": 7.1,
+        "sm_sentiment_x_gap": 0.00029669709575982575,
+        "sm_sentiment_x_previous_return": 0.00031053966553768153,
+        "sm_sentiment_x_momentum_5": 0.00011217045271332255,
+        "sm_sentiment_x_volatility_5": 0.0017865309891768562,
+        "sm_uncertainty_x_gap": 0.0005552894035764911,
+        "sm_reversal_candidate": 0.0
+    },
+    "macroeconomic_data": {
+        "Open": 223.9199981689453,
+        "previous_open": 223.0,
+        "previous_high": 224.2899932861328,
+        "previous_low": 222.3699951171875,
+        "previous_close": 223.47000122070312,
+        "previous_day_return": 0.002107628792390681,
+        "opening_gap": 0.0020136794459393315,
+        "previous_volume": 36604100.0,
+        "previous_volume_change": 0.23527287698600174,
+        "previous_vix": 17.790000915527344,
+        "previous_cpi": 322.169,
+        "previous_gdp": 24026.834,
+        "previous_unemployment": 4.3,
+        "rm_previous_day_return": 0.002107628792390681,
+        "rm_opening_gap": 0.0020136794459393315,
+        "rm_previous_range_ratio": 0.00860985725984445,
+        "rm_previous_body_ratio": 0.002107628792390695,
+        "rm_previous_body_to_range": 0.24479253590189862,
+        "rm_previous_close_location": 0.5729203919605178,
+        "rm_previous_upper_shadow": 0.0036770944638102577,
+        "rm_previous_lower_shadow": 0.002825134003643498,
+        "rm_close_return_lag_1": 0.00026855359030641957,
+        "rm_close_return_lag_2": 0.015869432167250785,
+        "rm_close_return_lag_3": -0.002449462616694653,
+        "rm_close_return_lag_5": -0.017510092291414314,
+        "rm_momentum_3": 0.013653245101922673,
+        "rm_momentum_5": 0.0007612994474788248,
+        "rm_momentum_10": 0.06571605044998474,
+        "rm_momentum_20": 0.07484006197162874,
+        "rm_realized_volatility_5": 0.012125163285559255,
+        "rm_realized_volatility_10": 0.015041149382522323,
+        "rm_realized_volatility_20": 0.015054673229339822,
+        "rm_historical_range_3": 0.010705377743065266,
+        "rm_historical_range_5": 0.014227777677905581,
+        "rm_historical_range_10": 0.01823760022797242,
+        "rm_historical_range_20": 0.0195354279588612,
+        "rm_previous_volume": 36604100.0,
+        "rm_log_previous_volume": 17.41567084127488,
+        "rm_volume_change_1": 0.23527287698600174,
+        "rm_volume_ratio_5": 0.9372434711404873,
+        "rm_volume_ratio_10": 0.7748221178046456,
+        "rm_volume_ratio_20": 0.8482564951557465,
+        "rm_volume_zscore_5": -0.20811773677283457,
+        "rm_volume_zscore_10": -0.39590553152752983,
+        "rm_volume_zscore_20": -0.30874864627798154,
+        "rm_vix_change_1": 1.4100017547607422,
+        "rm_vix_pct_change_1": 0.08608069761920256,
+        "rm_vix_mean_3": 16.936666488647457,
+        "rm_vix_mean_5": 16.873999786376952,
+        "rm_vix_mean_10": 17.13499984741211,
+        "rm_vix_mean_20": 17.99000005722046,
+        "rm_vix_deviation_3": 0.05038384781632632,
+        "rm_vix_deviation_5": 0.054284765956315484,
+        "rm_vix_deviation_10": 0.03822591619189053,
+        "rm_vix_deviation_20": -0.01111723963629696,
+        "rm_vix_zscore_3": 1.137238768631646,
+        "rm_vix_zscore_5": 1.7005880916247422,
+        "rm_vix_zscore_10": 0.6218534860948076,
+        "rm_vix_zscore_20": -0.11763283597346183,
+        "rm_cpi_change_1": 0.0,
+        "rm_cpi_pct_change_1": 0.0,
+        "rm_cpi_change_21": 0.7339999999999804,
+        "rm_cpi_pct_change_21": 0.0022835098853577485,
+        "rm_vix_x_gap": 0.0358233591868393,
+        "rm_vix_x_previous_return": 0.03749471814622201,
+        "rm_volume_x_range": 0.007303367343026913,
+        "rm_volume_x_gap": 0.0017081166691796628,
+        "rm_vix_x_volume": 15.090483825422746
+    },
+    "execution_data": {
+        "Open": 223.9199981689453,
+        "High": 224.0,
+        "Low": 218.42999267578125,
+        "Close": 219.3600006103516,
+        "transaction_cost_bps_per_side": 2.5,
+        "slippage_bps_per_side": 2.5,
+        "fixed_position_fraction": 1.0
+    },
+    "realised_outcome_data": {
+        "High": 224.0,
+        "Low": 218.42999267578125,
+        "Close": 219.3600006103516,
+        "gross_open_to_close_return": -0.02036440512630433,
+        "net_open_to_close_return": -0.021354100499897777,
+        "target_profitable": 0,
+        "target_loss": 1
+    },
+    "market_analysis_output": {
+        "agent_id": "MA",
+        "agent_run_id": "run_ma_05ca0a177c1142ea9dd2b94468ef7d7e",
+        "model_name": "ProfitAwareDualModelMarketAnalysisAgent",
+        "model_version": "MA_DUAL_OHLC_V2",
+        "status": "COMPLETED",
+        "started_at_utc": "2026-08-30T02:50:32.243643+00:00",
+        "completed_at_utc": "2026-08-30T02:50:32.421215+00:00",
+        "processing_time_ms": 177.23180004395545,
+        "confidence_score": 0.5151091845692627,
+        "input_feature_names": [
+            "ma_previous_day_return",
+            "ma_opening_gap",
+            "ma_previous_range_ratio",
+            "ma_previous_body_ratio",
+            "ma_previous_body_to_range",
+            "ma_previous_close_location",
+            "ma_previous_upper_shadow",
+            "ma_previous_lower_shadow",
+            "ma_open_vs_previous_open",
+            "ma_close_return_lag_1",
+            "ma_close_return_lag_2",
+            "ma_close_return_lag_3",
+            "ma_close_return_lag_5",
+            "ma_momentum_3",
+            "ma_momentum_5",
+            "ma_momentum_10",
+            "ma_momentum_20",
+            "ma_mean_return_3",
+            "ma_mean_return_5",
+            "ma_mean_return_10",
+            "ma_volatility_5",
+            "ma_volatility_10",
+            "ma_volatility_20",
+            "ma_mean_range_3",
+            "ma_mean_range_5",
+            "ma_mean_range_10",
+            "ma_gap_x_previous_return",
+            "ma_absolute_opening_gap",
+            "ma_absolute_previous_return",
+            "ma_reversal_candidate"
+        ],
+        "evidence": [
+            {
+                "feature_name": "ma_previous_day_return",
+                "feature_value": 0.002107628792390681,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_opening_gap",
+                "feature_value": 0.0020136794459393315,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_previous_range_ratio",
+                "feature_value": 0.00860985725984445,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_previous_body_ratio",
+                "feature_value": 0.002107628792390695,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_previous_body_to_range",
+                "feature_value": 0.24479253590189862,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_previous_close_location",
+                "feature_value": 0.5729203919605178,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_previous_upper_shadow",
+                "feature_value": 0.0036770944638102577,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_previous_lower_shadow",
+                "feature_value": 0.002825134003643498,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_open_vs_previous_open",
+                "feature_value": 0.004125552327109094,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_close_return_lag_1",
+                "feature_value": 0.00026855359030641957,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_close_return_lag_2",
+                "feature_value": 0.015869432167250785,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_close_return_lag_3",
+                "feature_value": -0.002449462616694653,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_close_return_lag_5",
+                "feature_value": -0.017510092291414314,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_momentum_3",
+                "feature_value": 0.013653245101922673,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_momentum_5",
+                "feature_value": 0.0007612994474788248,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_momentum_10",
+                "feature_value": 0.06571605044998474,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_momentum_20",
+                "feature_value": 0.07484006197162874,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_mean_return_3",
+                "feature_value": 0.004562841046954184,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_mean_return_5",
+                "feature_value": 0.00021112472879896148,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_mean_return_10",
+                "feature_value": 0.00648608292263767,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_volatility_5",
+                "feature_value": 0.012125163285559255,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_volatility_10",
+                "feature_value": 0.015041149382522323,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_volatility_20",
+                "feature_value": 0.015054673229339822,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_mean_range_3",
+                "feature_value": 0.010705377743065266,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_mean_range_5",
+                "feature_value": 0.014227777677905581,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_mean_range_10",
+                "feature_value": 0.01823760022797242,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_gap_x_previous_return",
+                "feature_value": 4.244088778907049e-06,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_absolute_opening_gap",
+                "feature_value": 0.0020136794459393315,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_absolute_previous_return",
+                "feature_value": 0.002107628792390681,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_reversal_candidate",
+                "feature_value": 0.0,
+                "description": "Leakage-safe OHLC-derived Market Analysis feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "ma_expected_return_threshold",
+                "feature_value": -0.001603337026504282,
+                "description": "Minimum model-predicted net return required for BUY.",
+                "importance": null,
+                "source_date": null
+            }
+        ],
+        "warnings": [],
+        "error_message": null,
+        "signal": "NO_TRADE",
+        "predicted_profit_probability": 0.4396939103055167,
+        "expected_net_return": -0.0006898032193554503,
+        "decision_threshold": 0.7049470639427495
+    },
+    "sentiment_output": {
+        "agent_id": "SM",
+        "agent_run_id": "run_sm_5f7cf46a04e64afeb3c4490a64ce49a1",
+        "model_name": "ProfitAwareDualModelSentimentAgent",
+        "model_version": "SM_DUAL_OHLC_SENTIMENT_V2",
+        "status": "COMPLETED",
+        "started_at_utc": "2026-08-30T02:50:32.421215+00:00",
+        "completed_at_utc": "2026-08-30T02:50:32.597546+00:00",
+        "processing_time_ms": 176.39299994334579,
+        "confidence_score": 0.5491684464838007,
+        "input_feature_names": [
+            "sm_previous_day_return",
+            "sm_opening_gap",
+            "sm_previous_range_ratio",
+            "sm_previous_body_ratio",
+            "sm_previous_body_to_range",
+            "sm_previous_close_location",
+            "sm_previous_upper_shadow",
+            "sm_previous_lower_shadow",
+            "sm_open_vs_previous_open",
+            "sm_close_return_lag_1",
+            "sm_close_return_lag_2",
+            "sm_close_return_lag_3",
+            "sm_close_return_lag_5",
+            "sm_momentum_3",
+            "sm_momentum_5",
+            "sm_momentum_10",
+            "sm_momentum_20",
+            "sm_volatility_5",
+            "sm_volatility_10",
+            "sm_volatility_20",
+            "sm_mean_range_3",
+            "sm_mean_range_5",
+            "sm_mean_range_10",
+            "previous_sentiment_mean",
+            "previous_sentiment_std",
+            "previous_news_count",
+            "sm_news_available",
+            "sm_log_news_count",
+            "sm_sentiment_strength",
+            "sm_positive_sentiment",
+            "sm_negative_sentiment",
+            "sm_sentiment_consistency",
+            "sm_coverage_weighted_sentiment",
+            "sm_coverage_weighted_uncertainty",
+            "sm_sentiment_mean_lag_2",
+            "sm_sentiment_mean_lag_3",
+            "sm_sentiment_mean_lag_5",
+            "sm_sentiment_std_lag_2",
+            "sm_sentiment_std_lag_3",
+            "sm_sentiment_std_lag_5",
+            "sm_news_count_lag_2",
+            "sm_news_count_lag_3",
+            "sm_news_count_lag_5",
+            "sm_sentiment_change_1",
+            "sm_sentiment_change_3",
+            "sm_sentiment_mean_3",
+            "sm_sentiment_mean_5",
+            "sm_sentiment_mean_10",
+            "sm_sentiment_dispersion_3",
+            "sm_sentiment_dispersion_5",
+            "sm_sentiment_dispersion_10",
+            "sm_news_mean_3",
+            "sm_news_mean_5",
+            "sm_news_mean_10",
+            "sm_sentiment_x_gap",
+            "sm_sentiment_x_previous_return",
+            "sm_sentiment_x_momentum_5",
+            "sm_sentiment_x_volatility_5",
+            "sm_uncertainty_x_gap",
+            "sm_reversal_candidate"
+        ],
+        "evidence": [
+            {
+                "feature_name": "previous_sentiment_mean",
+                "feature_value": 0.1473407777777778,
+                "description": "Leakage-safe SM evidence feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "previous_sentiment_std",
+                "feature_value": 0.2757585894300383,
+                "description": "Leakage-safe SM evidence feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "previous_news_count",
+                "feature_value": 9.0,
+                "description": "Leakage-safe SM evidence feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "sm_opening_gap",
+                "feature_value": 0.0020136794459393315,
+                "description": "Leakage-safe SM evidence feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "sm_previous_day_return",
+                "feature_value": 0.002107628792390681,
+                "description": "Leakage-safe SM evidence feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "sm_sentiment_consistency",
+                "feature_value": 0.4523005150395935,
+                "description": "Leakage-safe SM evidence feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "sm_coverage_weighted_sentiment",
+                "feature_value": 0.3392646785012595,
+                "description": "Leakage-safe SM evidence feature.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "sm_expected_net_return",
+                "feature_value": 0.0027317619683110686,
+                "description": "Regression estimate of net Open-to-Close return.",
+                "importance": null,
+                "source_date": null
+            }
+        ],
+        "warnings": [],
+        "error_message": null,
+        "recommendation": "NEUTRAL",
+        "sentiment_score": 0.514541624878765,
+        "predicted_profit_probability": 0.514541624878765,
+        "support_threshold": 0.4101150657006519,
+        "reject_threshold": 0.307586299275489
+    },
+    "risk_management_output": {
+        "agent_id": "RM",
+        "agent_run_id": "run_rm_b425e77d733745f39e4951c618545cb1",
+        "model_name": "AutonomousSelectiveRiskAdjustedAgent",
+        "model_version": "RM_AUTONOMOUS_SELECTIVE_V2",
+        "status": "COMPLETED",
+        "started_at_utc": "2026-08-30T02:50:32.597546+00:00",
+        "completed_at_utc": "2026-08-30T02:50:32.738741+00:00",
+        "processing_time_ms": 140.7166999997571,
+        "confidence_score": 0.2090400868005507,
+        "input_feature_names": [
+            "rm_previous_day_return",
+            "rm_opening_gap",
+            "rm_previous_range_ratio",
+            "rm_previous_body_ratio",
+            "rm_previous_body_to_range",
+            "rm_previous_close_location",
+            "rm_previous_upper_shadow",
+            "rm_previous_lower_shadow",
+            "rm_close_return_lag_1",
+            "rm_close_return_lag_2",
+            "rm_close_return_lag_3",
+            "rm_close_return_lag_5",
+            "rm_momentum_3",
+            "rm_momentum_5",
+            "rm_momentum_10",
+            "rm_momentum_20",
+            "rm_realized_volatility_5",
+            "rm_realized_volatility_10",
+            "rm_realized_volatility_20",
+            "rm_historical_range_3",
+            "rm_historical_range_5",
+            "rm_historical_range_10",
+            "rm_historical_range_20",
+            "rm_previous_volume",
+            "rm_log_previous_volume",
+            "rm_volume_change_1",
+            "rm_volume_ratio_5",
+            "rm_volume_ratio_10",
+            "rm_volume_ratio_20",
+            "rm_volume_zscore_5",
+            "rm_volume_zscore_10",
+            "rm_volume_zscore_20",
+            "previous_vix",
+            "rm_vix_change_1",
+            "rm_vix_pct_change_1",
+            "rm_vix_mean_3",
+            "rm_vix_mean_5",
+            "rm_vix_mean_10",
+            "rm_vix_mean_20",
+            "rm_vix_deviation_3",
+            "rm_vix_deviation_5",
+            "rm_vix_deviation_10",
+            "rm_vix_deviation_20",
+            "rm_vix_zscore_3",
+            "rm_vix_zscore_5",
+            "rm_vix_zscore_10",
+            "rm_vix_zscore_20",
+            "previous_cpi",
+            "rm_cpi_change_1",
+            "rm_cpi_pct_change_1",
+            "rm_cpi_change_21",
+            "rm_cpi_pct_change_21",
+            "rm_vix_x_gap",
+            "rm_vix_x_previous_return",
+            "rm_volume_x_range",
+            "rm_volume_x_gap",
+            "rm_vix_x_volume"
+        ],
+        "evidence": [
+            {
+                "feature_name": "rm_buy_probability",
+                "feature_value": 0.22621434444764754,
+                "description": "Probability that the observation belongs to the selective risk-adjusted BUY class.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "rm_buy_threshold",
+                "feature_value": 0.36,
+                "description": "Development-selected probability threshold for autonomous RM BUY.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "downside_probability",
+                "feature_value": 0.28446513671034346,
+                "description": "Predicted probability of a material downside event.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "predicted_tail_downside",
+                "feature_value": 0.017407887409523284,
+                "description": "Predicted high-quantile downside magnitude.",
+                "importance": null,
+                "source_date": null
+            }
+        ],
+        "warnings": [],
+        "error_message": null,
+        "recommendation": "REJECT",
+        "risk_score": 0.37478804889790307,
+        "risk_level": "MODERATE",
+        "predicted_loss_probability": 0.28446513671034346,
+        "maximum_acceptable_risk": 1.0
+    },
+    "decision_fusion": {
+        "configuration_id": "CONFIG_4_MA_SM_RM_EX_RF",
+        "resolution_mode": "MAJORITY_VOTE",
+        "participating_agents": [
+            "MA",
+            "SM",
+            "RM"
+        ],
+        "agent_votes": {
+            "MA": "NO_TRADE",
+            "SM": "NO_TRADE",
+            "RM": "NO_TRADE"
+        },
+        "buy_vote_count": 0,
+        "required_buy_votes": 2,
+        "final_vote": "NO_TRADE",
+        "decision_source": "MAJORITY_CONSENSUS",
+        "supporting_agents": [],
+        "dissenting_agents": [
+            "MA",
+            "SM",
+            "RM"
+        ],
+        "consensus_category": "UNANIMOUS_NO_TRADE",
+        "created_at_utc": "2026-08-30T02:50:32.738741+00:00"
+    },
+    "execution_output": {
+        "agent_id": "EX",
+        "agent_run_id": "run_ex_0dc0f837067e46798648209d8d8e16ee",
+        "model_name": "DeterministicExecutionEngine",
+        "model_version": "EX_CONFIG4_MAJORITY_2_OF_3_V1",
+        "status": "COMPLETED",
+        "started_at_utc": "2026-08-30T02:50:32.738741+00:00",
+        "completed_at_utc": "2026-08-30T02:50:32.738741+00:00",
+        "processing_time_ms": 0.2316000172868371,
+        "confidence_score": null,
+        "input_feature_names": [
+            "Open",
+            "Close"
+        ],
+        "evidence": [
+            {
+                "feature_name": "buy_vote_count",
+                "feature_value": 0,
+                "description": "Number of active analytical agents voting BUY.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "required_buy_votes",
+                "feature_value": 2,
+                "description": "BUY votes required by the configuration policy.",
+                "importance": null,
+                "source_date": null
+            }
+        ],
+        "warnings": [],
+        "error_message": null,
+        "final_action": "NO_TRADE",
+        "opening_action": "NO_TRADE",
+        "closing_action": "NO_TRADE",
+        "approval": false,
+        "approval_reason": "Configuration 4 majority not reached: 0/3 agents voted BUY.",
+        "entry_price": null,
+        "exit_price": null,
+        "fixed_position_fraction": 1.0,
+        "gross_return": 0.0,
+        "transaction_cost_return": 0.0,
+        "slippage_return": 0.0,
+        "net_return": 0.0,
+        "capital_before": 100000.0,
+        "capital_after": 100000.0,
+        "trade_executed": false,
+        "decision_source": "MAJORITY_CONSENSUS",
+        "buy_vote_count": 0,
+        "required_buy_votes": 2,
+        "consensus_category": "UNANIMOUS_NO_TRADE",
+        "participating_agents": [
+            "MA",
+            "SM",
+            "RM"
+        ],
+        "supporting_agents": [],
+        "dissenting_agents": [
+            "MA",
+            "SM",
+            "RM"
+        ]
+    },
+    "reflection_output": {
+        "agent_id": "RF",
+        "agent_run_id": "run_rf_74b61a75cb5c4b38ae7e8ec8a49d2de0",
+        "model_name": "StructuredDiagnosticReflectionEngine",
+        "model_version": "RF_CONFIG4_MAJORITY_2_OF_3_V1",
+        "status": "COMPLETED",
+        "started_at_utc": "2026-08-30T02:50:32.738741+00:00",
+        "completed_at_utc": "2026-08-30T02:50:32.739742+00:00",
+        "processing_time_ms": 0.47610001638531685,
+        "confidence_score": 0.9136658858926807,
+        "input_feature_names": [
+            "market_analysis_output",
+            "sentiment_output",
+            "risk_management_output",
+            "decision_fusion",
+            "execution_output",
+            "realised_outcome_data",
+            "audit_events"
+        ],
+        "evidence": [
+            {
+                "feature_name": "agent_agreement_score",
+                "feature_value": 1.0,
+                "description": "Agreement among active analytical agents.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "buy_vote_count",
+                "feature_value": 0,
+                "description": "Number of active analytical agents voting BUY.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "required_buy_votes",
+                "feature_value": 2,
+                "description": "BUY votes required by the configuration decision policy.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "consensus_category",
+                "feature_value": "UNANIMOUS_NO_TRADE",
+                "description": "Observed consensus pattern.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "supporting_agents",
+                "feature_value": [],
+                "description": "Agents that voted BUY.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "dissenting_agents",
+                "feature_value": [
+                    "MA",
+                    "SM",
+                    "RM"
+                ],
+                "description": "Agents that voted NO_TRADE.",
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "evidence_completeness_score",
+                "feature_value": 1.0,
+                "description": null,
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "traceability_score",
+                "feature_value": 1.0,
+                "description": null,
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "confidence_consistency_score",
+                "feature_value": 0.424439239284538,
+                "description": null,
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "execution_completeness_score",
+                "feature_value": 1.0,
+                "description": null,
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "explainability_score",
+                "feature_value": 0.9136658858926807,
+                "description": null,
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "consensus_summary",
+                "feature_value": "Votes: MA=NO_TRADE, SM=NO_TRADE, RM=NO_TRADE. BUY votes=0; required BUY votes=2. Final vote=NO_TRADE. Consensus category=UNANIMOUS_NO_TRADE. Supporting agents=None. Dissenting agents=MA, SM, RM.",
+                "description": null,
+                "importance": null,
+                "source_date": null
+            },
+            {
+                "feature_name": "supporting_metrics",
+                "feature_value": {
+                    "configuration_id": "CONFIG_4_MA_SM_RM_EX_RF",
+                    "agreement_details": {
+                        "positions": {
+                            "MA": "NO_TRADE",
+                            "SM": "NO_TRADE",
+                            "RM": "NO_TRADE"
+                        },
+                        "pair_count": 3,
+                        "agreement_pairs": 3,
+                        "pairwise_results": {
+                            "MA_vs_SM": true,
+                            "MA_vs_RM": true,
+                            "SM_vs_RM": true
+                        },
+                        "buy_vote_count": 0,
+                        "required_buy_votes": 2,
+                        "final_vote": "NO_TRADE",
+                        "consensus_category": "UNANIMOUS_NO_TRADE",
+                        "decision_source": "MAJORITY_CONSENSUS"
+                    },
+                    "consensus_details": {
+                        "buy_vote_count": 0,
+                        "required_buy_votes": 2,
+                        "participating_agent_count": 3,
+                        "consensus_category": "UNANIMOUS_NO_TRADE",
+                        "decision_source": "MAJORITY_CONSENSUS",
+                        "supporting_agents": [],
+                        "dissenting_agents": [
+                            "MA",
+                            "SM",
+                            "RM"
+                        ],
+                        "final_vote": "NO_TRADE"
+                    },
+                    "agent_evidence_scores": {
+                        "MA": 1.0,
+                        "SM": 1.0,
+                        "RM": 1.0,
+                        "EX": 1.0
+                    },
+                    "traceability_components": {
+                        "decision_metadata": true,
+                        "execution_input": true,
+                        "execution_output": true,
+                        "realised_outcome": true,
+                        "audit_events": true,
+                        "decision_fusion": true,
+                        "market_input": true,
+                        "market_analysis_output": true,
+                        "sentiment_input": true,
+                        "sentiment_output": true,
+                        "macroeconomic_input": true,
+                        "risk_management_output": true,
+                        "three_agent_fusion": true,
+                        "majority_threshold": true,
+                        "complete_agent_votes": true
+                    },
+                    "confidence_details": {
+                        "combined_confidence": 0.424439239284538,
+                        "confidence_values": {
+                            "MA": 0.5151091845692627,
+                            "SM": 0.5491684464838007,
+                            "RM": 0.2090400868005507
+                        }
+                    },
+                    "execution_checks": {
+                        "approval_false": true,
+                        "approval_reason": true,
+                        "no_entry_price": true,
+                        "no_exit_price": true,
+                        "zero_net_return": true,
+                        "no_open_action": true,
+                        "no_close_action": true,
+                        "decision_source": true,
+                        "vote_below_threshold": true
+                    },
+                    "component_scores": {
+                        "agent_agreement_score": 1.0,
+                        "evidence_completeness_score": 1.0,
+                        "traceability_score": 1.0,
+                        "confidence_consistency_score": 0.424439239284538,
+                        "execution_completeness_score": 1.0,
+                        "explainability_score": 0.9136658858926807
+                    }
+                },
+                "description": null,
+                "importance": null,
+                "source_date": null
+            }
+        ],
+        "warnings": [],
+        "error_message": null,
+        "category": "NO_TRADE_REVIEW",
+        "evidence_summary": "MA: signal=signal=NO_TRADE, profit_probability=0.4396939103055167, confidence=0.5151091845692627 | SM: recommendation=NEUTRAL, profit_probability=0.514541624878765, confidence=0.5491684464838007 | RM: recommendation=REJECT, risk_score=0.37478804889790307, risk_level=MODERATE, confidence=0.2090400868005507",
+        "decision_summary": "EX did not execute a trade under CONFIG_4_MA_SM_RM_EX_RF. The resolved analytical decision was NO_TRADE using MAJORITY_CONSENSUS. 0 of 3 active analytical agents voted BUY; 2 BUY vote(s) were required. Consensus category was UNANIMOUS_NO_TRADE. Reason: Configuration 4 majority not reached: 0/3 agents voted BUY.",
+        "outcome_summary": "No trade was executed. The counterfactual net Open-to-Close return was -2.135410%.",
+        "identified_strengths": [
+            "The NO_TRADE decision avoided a non-profitable market outcome.",
+            "All three analytical agents reached the same directional decision.",
+            "The resolved NO_TRADE decision avoided a non-profitable Open-to-Close outcome."
+        ],
+        "identified_weaknesses": [],
+        "inconsistencies": [],
+        "diagnostic_labels": [
+            "CONFIG_4_MA_SM_RM_EX_RF",
+            "NO_TRADE",
+            "FULL_AGENT_AGREEMENT",
+            "UNANIMOUS_NO_TRADE",
+            "CONSENSUS_UNANIMOUS_NO_TRADE",
+            "CORRECT_TRADE_REJECTION"
+        ],
+        "expected_outcome": "NO_TRADE_EXPECTED",
+        "actual_outcome": "NO_TRADE",
+        "agent_agreement_score": 1.0,
+        "evidence_completeness_score": 1.0,
+        "traceability_score": 1.0,
+        "confidence_consistency_score": 0.424439239284538,
+        "execution_completeness_score": 1.0,
+        "explainability_score": 0.9136658858926807
+    },
+    "audit_events": [
+        {
+            "audit_event_id": "audit_39f4a4aaf9884fd992e13215c765f4b6",
+            "event_type": "PACKET_CREATED",
+            "decision_id": "decision_19a6ad22770d46ffa185fdcac4186f2d",
+            "timestamp_utc": "2026-08-30T02:50:32.243643+00:00",
+            "message": "Decision packet created.",
+            "agent_id": null,
+            "details": {
+                "configuration_id": "CONFIG_4_MA_SM_RM_EX_RF",
+                "resolution_mode": "MAJORITY_VOTE",
+                "required_buy_votes": 2
+            }
+        },
+        {
+            "audit_event_id": "audit_0384f803678d4fc8b9f6153f6d3c4c64",
+            "event_type": "AGENT_STARTED",
+            "decision_id": "decision_19a6ad22770d46ffa185fdcac4186f2d",
+            "timestamp_utc": "2026-08-30T02:50:32.243643+00:00",
+            "message": "MA started.",
+            "agent_id": "MA",
+            "details": {
+                "agent_run_id": "run_ma_05ca0a177c1142ea9dd2b94468ef7d7e",
+                "model_name": "ProfitAwareDualModelMarketAnalysisAgent",
+                "model_version": "MA_DUAL_OHLC_V2"
+            }
+        },
+        {
+            "audit_event_id": "audit_8b835a35270c4365b754b33cc32f86a0",
+            "event_type": "PACKET_UPDATED",
+            "decision_id": "decision_19a6ad22770d46ffa185fdcac4186f2d",
+            "timestamp_utc": "2026-08-30T02:50:32.421215+00:00",
+            "message": "Market Analysis output added.",
+            "agent_id": "MA",
+            "details": {}
+        },
+        {
+            "audit_event_id": "audit_66b1c397e2174600af52e3f346011855",
+            "event_type": "AGENT_COMPLETED",
+            "decision_id": "decision_19a6ad22770d46ffa185fdcac4186f2d",
+            "timestamp_utc": "2026-08-30T02:50:32.421215+00:00",
+            "message": "MA completed.",
+            "agent_id": "MA",
+            "details": {
+                "agent_run_id": "run_ma_05ca0a177c1142ea9dd2b94468ef7d7e",
+                "processing_time_ms": 177.23180004395545
+            }
+        },
+        {
+            "audit_event_id": "audit_2d7b9b9256ac4754a77098c588cdb336",
+            "event_type": "AGENT_STARTED",
+            "decision_id": "decision_19a6ad22770d46ffa185fdcac4186f2d",
+            "timestamp_utc": "2026-08-30T02:50:32.421215+00:00",
+            "message": "SM started.",
+            "agent_id": "SM",
+            "details": {
+                "agent_run_id": "run_sm_5f7cf46a04e64afeb3c4490a64ce49a1",
+                "model_name": "ProfitAwareDualModelSentimentAgent",
+                "model_version": "SM_DUAL_OHLC_SENTIMENT_V2"
+            }
+        },
+        {
+            "audit_event_id": "audit_72c285b6d43d43c1a012a0690fb9a964",
+            "event_type": "PACKET_UPDATED",
+            "decision_id": "decision_19a6ad22770d46ffa185fdcac4186f2d",
+            "timestamp_utc": "2026-08-30T02:50:32.597546+00:00",
+            "message": "Sentiment output added.",
+            "agent_id": "SM",
+            "details": {}
+        },
+        {
+            "audit_event_id": "audit_398224835711440da67b0269a99422c3",
+            "event_type": "AGENT_COMPLETED",
+            "decision_id": "decision_19a6ad22770d46ffa185fdcac4186f2d",
+            "timestamp_utc": "2026-08-30T02:50:32.597546+00:00",
+            "message": "SM completed.",
+            "agent_id": "SM",
+            "details": {
+                "agent_run_id": "run_sm_5f7cf46a04e64afeb3c4490a64ce49a1",
+                "processing_time_ms": 176.39299994334579
+            }
+        },
+        {
+            "audit_event_id": "audit_ed52cff737e74786b3fbe1fcf88adbe9",
+            "event_type": "AGENT_STARTED",
+            "decision_id": "decision_19a6ad22770d46ffa185fdcac4186f2d",
+            "timestamp_utc": "2026-08-30T02:50:32.597546+00:00",
+            "message": "RM started.",
+            "agent_id": "RM",
+            "details": {
+                "agent_run_id": "run_rm_b425e77d733745f39e4951c618545cb1",
+                "model_name": "AutonomousSelectiveRiskAdjustedAgent",
+                "model_version": "RM_AUTONOMOUS_SELECTIVE_V2"
+            }
+        },
+        {
+            "audit_event_id": "audit_4ec6f4b7633f42918bcdcda97dfa66a1",
+            "event_type": "PACKET_UPDATED",
+            "decision_id": "decision_19a6ad22770d46ffa185fdcac4186f2d",
+            "timestamp_utc": "2026-08-30T02:50:32.738741+00:00",
+            "message": "Risk Management output added.",
+            "agent_id": "RM",
+            "details": {}
+        },
+        {
+            "audit_event_id": "audit_8bf428f3a83d46bd9c871a7891d4bd9b",
+            "event_type": "AGENT_COMPLETED",
+            "decision_id": "decision_19a6ad22770d46ffa185fdcac4186f2d",
+            "timestamp_utc": "2026-08-30T02:50:32.738741+00:00",
+            "message": "RM completed.",
+            "agent_id": "RM",
+            "details": {
+                "agent_run_id": "run_rm_b425e77d733745f39e4951c618545cb1",
+                "processing_time_ms": 140.7166999997571
+            }
+        },
+        {
+            "audit_event_id": "audit_2cba3670fcfb46b9bbb8048f7b8c9831",
+            "event_type": "AGENT_STARTED",
+            "decision_id": "decision_19a6ad22770d46ffa185fdcac4186f2d",
+            "timestamp_utc": "2026-08-30T02:50:32.738741+00:00",
+            "message": "EX started.",
+            "agent_id": "EX",
+            "details": {
+                "agent_run_id": "run_ex_0dc0f837067e46798648209d8d8e16ee",
+                "model_name": "DeterministicExecutionEngine",
+                "model_version": "EX_CONFIG4_MAJORITY_2_OF_3_V1"
+            }
+        },
+        {
+            "audit_event_id": "audit_24b22cf2cada4ec08adef3a4c3a9c9b4",
+            "event_type": "FUSION_RECORDED",
+            "decision_id": "decision_19a6ad22770d46ffa185fdcac4186f2d",
+            "timestamp_utc": "2026-08-30T02:50:32.738741+00:00",
+            "message": "Decision-fusion record added.",
+            "agent_id": "EX",
+            "details": {
+                "resolution_mode": "MAJORITY_VOTE",
+                "buy_vote_count": 0,
+                "required_buy_votes": 2,
+                "final_vote": "NO_TRADE",
+                "consensus_category": "UNANIMOUS_NO_TRADE"
+            }
+        },
+        {
+            "audit_event_id": "audit_0fe4126a3ac0455dab7e9f29962eb2a8",
+            "event_type": "EXECUTION_COMPLETED",
+            "decision_id": "decision_19a6ad22770d46ffa185fdcac4186f2d",
+            "timestamp_utc": "2026-08-30T02:50:32.738741+00:00",
+            "message": "Execution output added.",
+            "agent_id": "EX",
+            "details": {
+                "final_action": "NO_TRADE",
+                "trade_executed": false,
+                "net_return": 0.0,
+                "decision_source": "MAJORITY_CONSENSUS",
+                "buy_vote_count": 0,
+                "required_buy_votes": 2
+            }
+        },
+        {
+            "audit_event_id": "audit_567b2c82cfd94e1a96fb64ae2eb45976",
+            "event_type": "AGENT_COMPLETED",
+            "decision_id": "decision_19a6ad22770d46ffa185fdcac4186f2d",
+            "timestamp_utc": "2026-08-30T02:50:32.738741+00:00",
+            "message": "EX completed.",
+            "agent_id": "EX",
+            "details": {
+                "agent_run_id": "run_ex_0dc0f837067e46798648209d8d8e16ee",
+                "processing_time_ms": 0.2316000172868371
+            }
+        },
+        {
+            "audit_event_id": "audit_23980a2c58fb4655b063084e04696212",
+            "event_type": "AGENT_STARTED",
+            "decision_id": "decision_19a6ad22770d46ffa185fdcac4186f2d",
+            "timestamp_utc": "2026-08-30T02:50:32.738741+00:00",
+            "message": "RF started.",
+            "agent_id": "RF",
+            "details": {
+                "agent_run_id": "run_rf_74b61a75cb5c4b38ae7e8ec8a49d2de0",
+                "model_name": "StructuredDiagnosticReflectionEngine",
+                "model_version": "RF_CONFIG4_MAJORITY_2_OF_3_V1"
+            }
+        },
+        {
+            "audit_event_id": "audit_d57b81e4526748e6a9b963812cfe9c02",
+            "event_type": "REFLECTION_COMPLETED",
+            "decision_id": "decision_19a6ad22770d46ffa185fdcac4186f2d",
+            "timestamp_utc": "2026-08-30T02:50:32.739742+00:00",
+            "message": "Reflection output added.",
+            "agent_id": "RF",
+            "details": {
+                "category": "NO_TRADE_REVIEW",
+                "explainability_score": 0.9136658858926807
+            }
+        },
+        {
+            "audit_event_id": "audit_a378b19e928d455da39d2dc2e3272fb4",
+            "event_type": "AGENT_COMPLETED",
+            "decision_id": "decision_19a6ad22770d46ffa185fdcac4186f2d",
+            "timestamp_utc": "2026-08-30T02:50:32.739742+00:00",
+            "message": "RF completed.",
+            "agent_id": "RF",
+            "details": {
+                "agent_run_id": "run_rf_74b61a75cb5c4b38ae7e8ec8a49d2de0",
+                "processing_time_ms": 0.47610001638531685
+            }
+        }
+    ],
+    "packet_warnings": []
+}

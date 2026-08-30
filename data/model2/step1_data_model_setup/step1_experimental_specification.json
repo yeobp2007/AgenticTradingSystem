@@ -1,0 +1,28 @@
+{
+    "decision_mode": "REPLICATION",
+    "significance_level": 0.05,
+    "execution": {
+        "initial_capital": 100000.0,
+        "transaction_cost_bps_per_side": 2.5,
+        "slippage_bps_per_side": 2.5,
+        "trading_days_per_year": 252,
+        "annual_risk_free_rate": 0.0,
+        "allow_short_selling": false,
+        "allow_overnight_positions": false,
+        "use_dynamic_position_sizing": false,
+        "entry_price_field": "Open",
+        "exit_price_field": "Close",
+        "fixed_position_fraction": 1.0
+    },
+    "split": {
+        "train_fraction": 0.6,
+        "validation_fraction": 0.2,
+        "test_fraction": 0.2
+    },
+    "reproducibility": {
+        "random_seed": 42,
+        "feature_version": "STEP1_FEATURES_V1",
+        "target_version": "NET_OPEN_TO_CLOSE_BINARY_V1",
+        "experiment_version": "AGENTIC_FRAMEWORK_CONFIG4_CONSENSUS_V2"
+    }
+}
