@@ -11332,7 +11332,7 @@ Step 2 communication-platform validation passed.
 <tbody>
 <tr>
 <th>0</th>
-<td>decision_9c8446dee662408ba7c5e21f7e4100a8</td>
+<td>decision_85926f439def4281ab23ef7a626018b8</td>
 <td>AMZN</td>
 <td>2025-05-16</td>
 <td>CONFIG_4_MA_SM_RM_EX_RF</td>
@@ -19856,9 +19856,9 @@ Top Sentiment Agent Configurations
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>BUY probability threshold: 0.4101150657006519
+<pre>BUY probability threshold: 0.41011506570065187
 Expected-return threshold: 0.005837895773185159
-Reject threshold: 0.307586299275489
+Reject threshold: 0.3075862992754889
 </pre>
 </div>
 </div>
@@ -26176,7 +26176,7 @@ Final portfolio value: $102,254.00
 <tbody>
 <tr>
 <th>2025-05-16</th>
-<td>decision_4f5f6a06ce314adfbccd54ea686a6f10</td>
+<td>decision_ed2f70a3e9cc46aeafafa5fa6e852079</td>
 <td>CONFIG_4_MA_SM_RM_EX_RF</td>
 <td>0</td>
 <td>-0.007088</td>
@@ -26200,7 +26200,7 @@ Final portfolio value: $102,254.00
 </tr>
 <tr>
 <th>2025-05-19</th>
-<td>decision_5464fe147fe340cd92d982cdf6abcf0f</td>
+<td>decision_86a39ef9bc2e4955a5a34a82fcb7af58</td>
 <td>CONFIG_4_MA_SM_RM_EX_RF</td>
 <td>1</td>
 <td>0.021354</td>
@@ -26224,7 +26224,7 @@ Final portfolio value: $102,254.00
 </tr>
 <tr>
 <th>2025-05-20</th>
-<td>decision_32ea0d89bdc6481a9bb4bab861b631dc</td>
+<td>decision_c70ce9b13e7745f497270ef5ea48e3be</td>
 <td>CONFIG_4_MA_SM_RM_EX_RF</td>
 <td>0</td>
 <td>-0.003735</td>
@@ -26248,7 +26248,7 @@ Final portfolio value: $102,254.00
 </tr>
 <tr>
 <th>2025-05-21</th>
-<td>decision_16c755e802424a838fa47251047b8841</td>
+<td>decision_45a14e16468c41508e337648e66d8f19</td>
 <td>CONFIG_4_MA_SM_RM_EX_RF</td>
 <td>0</td>
 <td>-0.003429</td>
@@ -26272,7 +26272,7 @@ Final portfolio value: $102,254.00
 </tr>
 <tr>
 <th>2025-05-22</th>
-<td>decision_417be6cc4f9140608e287db417b98ae8</td>
+<td>decision_646fc325de3d4f81ad894ec7ecb51d31</td>
 <td>CONFIG_4_MA_SM_RM_EX_RF</td>
 <td>1</td>
 <td>0.007537</td>
@@ -29090,17 +29090,17 @@ C:\Users\yeobp\Desktop\Python\DBA-AIML-Walsh\MS-AIML\Capstone\FinalVersion\data\
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e1e91061-80cc-4e9a-a3fd-4843972efb86">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=72686612-10cc-404e-b07b-67d94929e898">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Step-9:-Statistical-Test-using-Paired-t-test">Step 9: Statistical Test using Paired t-test<a class="anchor-link" href="#Step-9:-Statistical-Test-using-Paired-t-test">¶</a></h4>
+<h4 id="Step-9:-Statistical-Test-using-z-test-on-Total-Return-(Difference-of-Means-with-Unequal-Variance)">Step 9: Statistical Test using z-test on Total Return (Difference of Means with Unequal Variance)<a class="anchor-link" href="#Step-9:-Statistical-Test-using-z-test-on-Total-Return-(Difference-of-Means-with-Unequal-Variance)">¶</a></h4>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9a669727-b4d0-4e88-933e-b4982d93af45">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fd4adc34-a197-460d-9194-c65afc6c698e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -29112,288 +29112,296 @@ C:\Users\yeobp\Desktop\Python\DBA-AIML-Walsh\MS-AIML\Capstone\FinalVersion\data\
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
 
-<span class="c1"># Parameters used</span>
-<span class="n">PAIRED_T_ALPHA</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="c1"># z-test for total return</span>
+<span class="c1"># Parameters used for z-test - difference of means with pooled variance</span>
+<span class="n">Z_TEST_ALPHA</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">Z_TEST_MINIMUM_OBSERVATIONS</span> <span class="o">=</span> <span class="mi">20</span>
 
 <span class="c1"># Validate required agent result tables</span>
-<span class="n">required_agent_tables</span> <span class="o">=</span> <span class="p">{</span>
+<span class="n">z_required_agent_tables</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"ma_daily_results"</span><span class="p">:</span> <span class="s2">"Run Step 5 before Step 9."</span><span class="p">,</span>
     <span class="s2">"sm_daily_results"</span><span class="p">:</span> <span class="s2">"Run Step 6 before Step 9."</span><span class="p">,</span>
     <span class="s2">"rm_daily_results"</span><span class="p">:</span> <span class="s2">"Run Step 7 before Step 9."</span><span class="p">,</span>
     <span class="s2">"config4_daily_results"</span><span class="p">:</span> <span class="s2">"Run Step 8 before Step 9."</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="n">missing_agent_tables</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">table_name</span>
-    <span class="k">for</span> <span class="n">table_name</span> <span class="ow">in</span> <span class="n">required_agent_tables</span>
-    <span class="k">if</span> <span class="n">table_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">()</span>
-<span class="p">]</span>
+<span class="n">z_missing_agent_tables</span> <span class="o">=</span> <span class="p">[</span><span class="n">table_name</span> <span class="k">for</span> <span class="n">table_name</span> <span class="ow">in</span> <span class="n">z_required_agent_tables</span> <span class="k">if</span> <span class="n">table_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">()]</span>
 
-<span class="k">if</span> <span class="n">missing_agent_tables</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">z_missing_agent_tables</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">NameError</span><span class="p">(</span>
         <span class="s2">"The following agent result tables are unavailable: "</span>
-        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">missing_agent_tables</span><span class="si">}</span><span class="s2">. "</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">z_missing_agent_tables</span><span class="si">}</span><span class="s2">. "</span>
         <span class="s2">"Run Steps 5-8 before Step 9."</span>
     <span class="p">)</span>
 
 <span class="c1"># Validate agent return column</span>
-<span class="k">for</span> <span class="n">table_name</span> <span class="ow">in</span> <span class="n">required_agent_tables</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">table_name</span> <span class="ow">in</span> <span class="n">z_required_agent_tables</span><span class="p">:</span>
     <span class="n">table</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()[</span><span class="n">table_name</span><span class="p">]</span>
     <span class="k">if</span> <span class="s2">"net_return"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">table_name</span><span class="si">}</span><span class="s2"> must contain a 'net_return' column."</span><span class="p">)</span>
 
-<span class="c1"># Check to make sure the required source results are available</span>
+<span class="c1"># Ensure all results are available</span>
 <span class="k">if</span> <span class="s2">"baseline_results"</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
-    <span class="n">paired_t_baseline_source</span> <span class="o">=</span> <span class="p">(</span><span class="n">baseline_results</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
-
+    <span class="n">z_baseline_source</span> <span class="o">=</span> <span class="n">baseline_results</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="k">elif</span> <span class="s2">"ma_baseline_results"</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
-    <span class="n">paired_t_baseline_source</span> <span class="o">=</span> <span class="p">(</span><span class="n">ma_baseline_results</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
-
+    <span class="n">z_baseline_source</span> <span class="o">=</span> <span class="n">ma_baseline_results</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="k">elif</span> <span class="s2">"sm_baseline_results"</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
-    <span class="n">paired_t_baseline_source</span> <span class="o">=</span> <span class="p">(</span><span class="n">sm_baseline_results</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
-
+    <span class="n">z_baseline_source</span> <span class="o">=</span> <span class="n">sm_baseline_results</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="k">elif</span> <span class="s2">"rm_baseline_results"</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
-    <span class="n">paired_t_baseline_source</span> <span class="o">=</span> <span class="p">(</span><span class="n">rm_baseline_results</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
-
+    <span class="n">z_baseline_source</span> <span class="o">=</span> <span class="n">rm_baseline_results</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="k">elif</span> <span class="s2">"config4_baseline_source"</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
-    <span class="n">paired_t_baseline_source</span> <span class="o">=</span> <span class="p">(</span><span class="n">config4_baseline_source</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
-
+    <span class="n">z_baseline_source</span> <span class="o">=</span> <span class="n">config4_baseline_source</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="ne">NameError</span><span class="p">(</span><span class="s2">"No baseline result table is available. Run the baseline analysis first."</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">NameError</span><span class="p">(</span><span class="s2">"No result table is available. Run the analysis first."</span><span class="p">)</span>
 
 <span class="c1"># Standardize baseline date index</span>
-<span class="k">if</span> <span class="s2">"Date"</span> <span class="ow">in</span> <span class="n">paired_t_baseline_source</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-    <span class="n">paired_t_baseline_source</span><span class="p">[</span><span class="s2">"Date"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">paired_t_baseline_source</span><span class="p">[</span><span class="s2">"Date"</span><span class="p">])</span>
-    <span class="n">paired_t_baseline_source</span> <span class="o">=</span> <span class="p">(</span><span class="n">paired_t_baseline_source</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"Date"</span><span class="p">))</span>
+<span class="k">if</span> <span class="s2">"Date"</span> <span class="ow">in</span> <span class="n">z_baseline_source</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">z_baseline_source</span><span class="p">[</span><span class="s2">"Date"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">z_baseline_source</span><span class="p">[</span><span class="s2">"Date"</span><span class="p">])</span>
+    <span class="n">z_baseline_source</span> <span class="o">=</span> <span class="n">z_baseline_source</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"Date"</span><span class="p">)</span>
 
-<span class="n">paired_t_baseline_source</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">paired_t_baseline_source</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-<span class="n">paired_t_baseline_source</span> <span class="o">=</span> <span class="p">(</span><span class="n">paired_t_baseline_source</span><span class="o">.</span><span class="n">sort_index</span><span class="p">())</span>
+<span class="n">z_baseline_source</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">z_baseline_source</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">z_baseline_source</span> <span class="o">=</span> <span class="n">z_baseline_source</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
 
 <span class="c1"># Remove duplicate dates if present</span>
-<span class="k">if</span> <span class="n">paired_t_baseline_source</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
-    <span class="n">paired_t_baseline_source</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">paired_t_baseline_source</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">paired_t_baseline_source</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="s2">"last"</span><span class="p">)</span>
-        <span class="p">]</span>
-    <span class="p">)</span>
+<span class="k">if</span> <span class="n">z_baseline_source</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+    <span class="n">z_baseline_source</span> <span class="o">=</span> <span class="n">z_baseline_source</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">z_baseline_source</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="s2">"last"</span><span class="p">)]</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="s2">"net_strategy_return"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">paired_t_baseline_source</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+<span class="k">if</span> <span class="s2">"net_strategy_return"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">z_baseline_source</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Baseline result table must contain 'net_strategy_return'."</span><span class="p">)</span>
 
-<span class="c1"># Utility/helper function to create aligned agent/baseline return table</span>
-<span class="k">def</span> <span class="nf">build_aligned_return_table</span><span class="p">(</span>
-    <span class="n">agent_results</span><span class="p">,</span>
-    <span class="n">agent_column</span><span class="p">,</span>
-    <span class="n">baseline_source</span><span class="p">,</span>
-    <span class="n">minimum_observations</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
-<span class="p">):</span>
-    <span class="c1"># Prepare agent data</span>
+<span class="c1"># Build aligned cumulative total-return dataframes required only by the z-test</span>
+<span class="k">def</span> <span class="nf">build_z_test_total_return_table</span><span class="p">(</span><span class="n">agent_results</span><span class="p">,</span> <span class="n">agent_column</span><span class="p">,</span> <span class="n">baseline_source</span><span class="p">,</span> <span class="n">minimum_observations</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
     <span class="n">agent_df</span> <span class="o">=</span> <span class="n">agent_results</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    
+
     <span class="k">if</span> <span class="s2">"Date"</span> <span class="ow">in</span> <span class="n">agent_df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
         <span class="n">agent_df</span><span class="p">[</span><span class="s2">"Date"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">agent_df</span><span class="p">[</span><span class="s2">"Date"</span><span class="p">])</span>
-        <span class="n">agent_df</span> <span class="o">=</span> <span class="p">(</span><span class="n">agent_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"Date"</span><span class="p">))</span>
+        <span class="n">agent_df</span> <span class="o">=</span> <span class="n">agent_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"Date"</span><span class="p">)</span>
 
     <span class="n">agent_df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">agent_df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-    <span class="n">agent_df</span> <span class="o">=</span> <span class="p">(</span><span class="n">agent_df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">())</span>
+    <span class="n">agent_df</span> <span class="o">=</span> <span class="n">agent_df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
 
-    <span class="c1"># Remove duplicate dates</span>
     <span class="k">if</span> <span class="n">agent_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
-        <span class="n">agent_df</span> <span class="o">=</span> <span class="p">(</span><span class="n">agent_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">agent_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="s2">"last"</span><span class="p">)])</span>
+        <span class="n">agent_df</span> <span class="o">=</span> <span class="n">agent_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">agent_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="s2">"last"</span><span class="p">)]</span>
 
-    <span class="c1"># Align baseline and agent on identical dates</span>
-    <span class="n">common_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">agent_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">baseline_source</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">())</span>
+    <span class="n">common_index</span> <span class="o">=</span> <span class="n">agent_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">baseline_source</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
 
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">common_index</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">minimum_observations</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">"Insufficient aligned </span><span class="si">{</span><span class="n">agent_column</span><span class="si">}</span><span class="s2">/Baseline "</span>
-            <span class="sa">f</span><span class="s2">"observations. Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">common_index</span><span class="p">)</span><span class="si">}</span><span class="s2">, "</span>
-            <span class="sa">f</span><span class="s2">"but at least </span><span class="si">{</span><span class="n">minimum_observations</span><span class="si">}</span><span class="s2"> are required."</span>
+            <span class="sa">f</span><span class="s2">"Insufficient aligned </span><span class="si">{</span><span class="n">agent_column</span><span class="si">}</span><span class="s2">/Baseline observations. "</span>
+            <span class="sa">f</span><span class="s2">"Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">common_index</span><span class="p">)</span><span class="si">}</span><span class="s2">, but at least </span><span class="si">{</span><span class="n">minimum_observations</span><span class="si">}</span><span class="s2"> are required."</span>
         <span class="p">)</span>
 
-    <span class="n">aligned_returns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">aligned_daily_returns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
         <span class="p">{</span>
-            <span class="s2">"Baseline"</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">baseline_source</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">common_index</span><span class="p">,</span><span class="s2">"net_strategy_return"</span><span class="p">],</span><span class="n">errors</span><span class="o">=</span><span class="s2">"coerce"</span><span class="p">,),</span>
-            <span class="n">agent_column</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">agent_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">common_index</span><span class="p">,</span><span class="s2">"net_return"</span><span class="p">],</span><span class="n">errors</span><span class="o">=</span><span class="s2">"coerce"</span><span class="p">,),</span>
+            <span class="s2">"Baseline Daily Return"</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span>
+                <span class="n">baseline_source</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">common_index</span><span class="p">,</span> <span class="s2">"net_strategy_return"</span><span class="p">],</span>
+                <span class="n">errors</span><span class="o">=</span><span class="s2">"coerce"</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">agent_column</span><span class="si">}</span><span class="s2"> Daily Return"</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span>
+                <span class="n">agent_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">common_index</span><span class="p">,</span> <span class="s2">"net_return"</span><span class="p">],</span>
+                <span class="n">errors</span><span class="o">=</span><span class="s2">"coerce"</span><span class="p">,</span>
+            <span class="p">),</span>
         <span class="p">},</span>
         <span class="n">index</span><span class="o">=</span><span class="n">common_index</span><span class="p">,</span>
     <span class="p">)</span>
 
-    <span class="c1"># Remove only invalid observations.</span>
-    <span class="c1"># IMPORTANT: Zero-return NO_TRADE days remain.</span>
-    <span class="n">aligned_returns</span> <span class="o">=</span> <span class="p">(</span><span class="n">aligned_returns</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">],</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,)</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span>
+    <span class="n">aligned_daily_returns</span> <span class="o">=</span> <span class="n">aligned_daily_returns</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">aligned_returns</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">minimum_observations</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">aligned_daily_returns</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">minimum_observations</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">"Fewer than </span><span class="si">{</span><span class="n">minimum_observations</span><span class="si">}</span><span class="s2"> complete "</span>
-            <span class="sa">f</span><span class="s2">"paired </span><span class="si">{</span><span class="n">agent_column</span><span class="si">}</span><span class="s2">/Baseline observations remain after alignment."</span>
+            <span class="sa">f</span><span class="s2">"Fewer than </span><span class="si">{</span><span class="n">minimum_observations</span><span class="si">}</span><span class="s2"> complete </span><span class="si">{</span><span class="n">agent_column</span><span class="si">}</span><span class="s2">/Baseline "</span>
+            <span class="s2">"observations remain after alignment."</span>
         <span class="p">)</span>
 
-    <span class="c1"># Return difference</span>
-    <span class="c1">#    Positive: Agent outperformed baseline</span>
-    <span class="c1">#    Negative: Baseline outperformed agent</span>
-    <span class="n">aligned_returns</span><span class="p">[</span><span class="s2">"Return Difference"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">aligned_returns</span><span class="p">[</span><span class="n">agent_column</span><span class="p">]</span><span class="o">-</span><span class="n">aligned_returns</span><span class="p">[</span><span class="s2">"Baseline"</span><span class="p">])</span>
+    <span class="n">total_returns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">"Baseline"</span><span class="p">:</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">aligned_daily_returns</span><span class="p">[</span><span class="s2">"Baseline Daily Return"</span><span class="p">])</span><span class="o">.</span><span class="n">cumprod</span><span class="p">()</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">,</span>
+            <span class="n">agent_column</span><span class="p">:</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">aligned_daily_returns</span><span class="p">[</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">agent_column</span><span class="si">}</span><span class="s2"> Daily Return"</span><span class="p">])</span><span class="o">.</span><span class="n">cumprod</span><span class="p">()</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="n">index</span><span class="o">=</span><span class="n">aligned_daily_returns</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+    <span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">aligned_returns</span>
+    <span class="k">return</span> <span class="n">total_returns</span>
 
-<span class="c1"># RQ1: Market analysis agent vs baseline</span>
-<span class="n">rq1_returns</span> <span class="o">=</span> <span class="n">build_aligned_return_table</span><span class="p">(</span>
+<span class="c1"># Create all cumulative total-return dataframes independently</span>
+<span class="n">z_rq1_total_returns</span> <span class="o">=</span> <span class="n">build_z_test_total_return_table</span><span class="p">(</span>
     <span class="n">agent_results</span><span class="o">=</span><span class="n">ma_daily_results</span><span class="p">,</span>
     <span class="n">agent_column</span><span class="o">=</span><span class="s2">"MA"</span><span class="p">,</span>
-    <span class="n">baseline_source</span><span class="o">=</span><span class="n">paired_t_baseline_source</span><span class="p">,</span>
+    <span class="n">baseline_source</span><span class="o">=</span><span class="n">z_baseline_source</span><span class="p">,</span>
+    <span class="n">minimum_observations</span><span class="o">=</span><span class="n">Z_TEST_MINIMUM_OBSERVATIONS</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="c1"># RQ2: Sentiment analysis agent vs baseline</span>
-<span class="n">rq2_returns</span> <span class="o">=</span> <span class="n">build_aligned_return_table</span><span class="p">(</span>
+<span class="n">z_rq2_total_returns</span> <span class="o">=</span> <span class="n">build_z_test_total_return_table</span><span class="p">(</span>
     <span class="n">agent_results</span><span class="o">=</span><span class="n">sm_daily_results</span><span class="p">,</span>
     <span class="n">agent_column</span><span class="o">=</span><span class="s2">"SM"</span><span class="p">,</span>
-    <span class="n">baseline_source</span><span class="o">=</span><span class="n">paired_t_baseline_source</span><span class="p">,</span>
+    <span class="n">baseline_source</span><span class="o">=</span><span class="n">z_baseline_source</span><span class="p">,</span>
+    <span class="n">minimum_observations</span><span class="o">=</span><span class="n">Z_TEST_MINIMUM_OBSERVATIONS</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="c1"># RQ3: Risk analysis agent vs baseline</span>
-<span class="n">rq3_returns</span> <span class="o">=</span> <span class="n">build_aligned_return_table</span><span class="p">(</span>
+<span class="n">z_rq3_total_returns</span> <span class="o">=</span> <span class="n">build_z_test_total_return_table</span><span class="p">(</span>
     <span class="n">agent_results</span><span class="o">=</span><span class="n">rm_daily_results</span><span class="p">,</span>
     <span class="n">agent_column</span><span class="o">=</span><span class="s2">"RM"</span><span class="p">,</span>
-    <span class="n">baseline_source</span><span class="o">=</span><span class="n">paired_t_baseline_source</span><span class="p">,</span>
+    <span class="n">baseline_source</span><span class="o">=</span><span class="n">z_baseline_source</span><span class="p">,</span>
+    <span class="n">minimum_observations</span><span class="o">=</span><span class="n">Z_TEST_MINIMUM_OBSERVATIONS</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="c1"># RQ4: Complete multi-agent configuration vs baseline</span>
-<span class="n">rq4_returns</span> <span class="o">=</span> <span class="n">build_aligned_return_table</span><span class="p">(</span>
+<span class="n">z_rq4_total_returns</span> <span class="o">=</span> <span class="n">build_z_test_total_return_table</span><span class="p">(</span>
     <span class="n">agent_results</span><span class="o">=</span><span class="n">config4_daily_results</span><span class="p">,</span>
     <span class="n">agent_column</span><span class="o">=</span><span class="s2">"MA+SM+RM"</span><span class="p">,</span>
-    <span class="n">baseline_source</span><span class="o">=</span><span class="n">paired_t_baseline_source</span><span class="p">,</span>
+    <span class="n">baseline_source</span><span class="o">=</span><span class="n">z_baseline_source</span><span class="p">,</span>
+    <span class="n">minimum_observations</span><span class="o">=</span><span class="n">Z_TEST_MINIMUM_OBSERVATIONS</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="c1"># Validation summary</span>
-<span class="n">paired_return_alignment_summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<span class="c1"># Validation summary for z-test dataframes</span>
+<span class="n">z_test_alignment_summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
-        <span class="s2">"RQ"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"RQ1"</span><span class="p">,</span><span class="s2">"RQ2"</span><span class="p">,</span><span class="s2">"RQ3"</span><span class="p">,</span><span class="s2">"RQ4"</span><span class="p">,],</span>
-        <span class="s2">"Comparison"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"MA vs Baseline"</span><span class="p">,</span><span class="s2">"SM vs Baseline"</span><span class="p">,</span><span class="s2">"RM vs Baseline"</span><span class="p">,</span><span class="s2">"MA+SM+RM vs Baseline"</span><span class="p">,],</span>
-        <span class="s2">"N"</span><span class="p">:</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">rq1_returns</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">rq2_returns</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">rq3_returns</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">rq4_returns</span><span class="p">),],</span>
-        <span class="s2">"Start Date"</span><span class="p">:</span> <span class="p">[</span><span class="n">rq1_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">rq2_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">rq3_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">rq4_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">(),],</span>
-        <span class="s2">"End Date"</span><span class="p">:</span> <span class="p">[</span><span class="n">rq1_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="n">rq2_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="n">rq3_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="n">rq4_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">(),],</span>
+        <span class="s2">"RQ"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"RQ1"</span><span class="p">,</span> <span class="s2">"RQ2"</span><span class="p">,</span> <span class="s2">"RQ3"</span><span class="p">,</span> <span class="s2">"RQ4"</span><span class="p">],</span>
+        <span class="s2">"Comparison"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">"MA vs Baseline"</span><span class="p">,</span>
+            <span class="s2">"SM vs Baseline"</span><span class="p">,</span>
+            <span class="s2">"RM vs Baseline"</span><span class="p">,</span>
+            <span class="s2">"MA+SM+RM vs Baseline"</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">"N"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">z_rq1_total_returns</span><span class="p">),</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">z_rq2_total_returns</span><span class="p">),</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">z_rq3_total_returns</span><span class="p">),</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">z_rq4_total_returns</span><span class="p">),</span>
+        <span class="p">],</span>
+        <span class="s2">"Start Date"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="n">z_rq1_total_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+            <span class="n">z_rq2_total_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+            <span class="n">z_rq3_total_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+            <span class="n">z_rq4_total_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+        <span class="p">],</span>
+        <span class="s2">"End Date"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="n">z_rq1_total_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+            <span class="n">z_rq2_total_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+            <span class="n">z_rq3_total_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+            <span class="n">z_rq4_total_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+        <span class="p">],</span>
+        <span class="s2">"Baseline Final Total Return"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="n">z_rq1_total_returns</span><span class="p">[</span><span class="s2">"Baseline"</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+            <span class="n">z_rq2_total_returns</span><span class="p">[</span><span class="s2">"Baseline"</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+            <span class="n">z_rq3_total_returns</span><span class="p">[</span><span class="s2">"Baseline"</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+            <span class="n">z_rq4_total_returns</span><span class="p">[</span><span class="s2">"Baseline"</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+        <span class="p">],</span>
+        <span class="s2">"Agent Final Total Return"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="n">z_rq1_total_returns</span><span class="p">[</span><span class="s2">"MA"</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+            <span class="n">z_rq2_total_returns</span><span class="p">[</span><span class="s2">"SM"</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+            <span class="n">z_rq3_total_returns</span><span class="p">[</span><span class="s2">"RM"</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+            <span class="n">z_rq4_total_returns</span><span class="p">[</span><span class="s2">"MA+SM+RM"</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+        <span class="p">],</span>
     <span class="p">}</span>
 <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"RQ1-RQ4 PAIRED RETURN TABLES CONSTRUCTED"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"RQ1-RQ4 CUMULATIVE TOTAL-RETURN TABLES CONSTRUCTED FOR Z-TEST"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">paired_return_alignment_summary</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">z_test_alignment_summary</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Return-table columns:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"RQ1:"</span><span class="p">,</span><span class="n">rq1_returns</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"RQ2:"</span><span class="p">,</span><span class="n">rq2_returns</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"RQ3:"</span><span class="p">,</span><span class="n">rq3_returns</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"RQ4:"</span><span class="p">,</span><span class="n">rq4_returns</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+<span class="c1"># Define z-test for difference of mean cumulative total returns using pooled variance</span>
+<span class="k">def</span> <span class="nf">run_pooled_variance_z_test</span><span class="p">(</span><span class="n">total_returns_df</span><span class="p">,</span> <span class="n">agent_column</span><span class="p">,</span> <span class="n">baseline_column</span><span class="o">=</span><span class="s2">"Baseline"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">):</span>
+    <span class="n">test_data</span> <span class="o">=</span> <span class="n">total_returns_df</span><span class="p">[[</span><span class="n">baseline_column</span><span class="p">,</span> <span class="n">agent_column</span><span class="p">]]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-<span class="c1"># Define paired t-test function between baseline and 4 different agent configuration returns</span>
-<span class="k">def</span> <span class="nf">run_paired_t_test</span><span class="p">(</span><span class="n">returns_df</span><span class="p">,</span> <span class="n">agent_column</span><span class="p">,</span> <span class="n">baseline_column</span><span class="o">=</span><span class="s2">"Baseline"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">):</span>
-    <span class="c1"># Extract paired observations</span>
-    <span class="n">paired_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">returns_df</span><span class="p">[[</span><span class="n">baseline_column</span><span class="p">,</span> <span class="n">agent_column</span><span class="p">,]]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"At least two total-return observations per sample are required."</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">paired_data</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"At least two paired observations are required."</span><span class="p">)</span>
+    <span class="n">baseline_total_returns</span> <span class="o">=</span> <span class="n">test_data</span><span class="p">[</span><span class="n">baseline_column</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">agent_total_returns</span> <span class="o">=</span> <span class="n">test_data</span><span class="p">[</span><span class="n">agent_column</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
 
-    <span class="n">baseline_returns</span> <span class="o">=</span> <span class="p">(</span><span class="n">paired_data</span><span class="p">[</span><span class="n">baseline_column</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span> <span class="p">))</span>
-    <span class="n">agent_returns</span> <span class="o">=</span> <span class="p">(</span><span class="n">paired_data</span><span class="p">[</span><span class="n">agent_column</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span> <span class="p">))</span>
+    <span class="n">n_baseline</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">baseline_total_returns</span><span class="p">)</span>
+    <span class="n">n_agent</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">agent_total_returns</span><span class="p">)</span>
 
-    <span class="c1"># Paired differences, sample size and degree of freedom</span>
-    <span class="n">differences</span> <span class="o">=</span> <span class="p">(</span><span class="n">agent_returns</span> <span class="o">-</span> <span class="n">baseline_returns</span><span class="p">)</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">differences</span><span class="p">)</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">mean_baseline</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">baseline_total_returns</span><span class="p">))</span>
+    <span class="n">mean_agent</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">agent_total_returns</span><span class="p">))</span>
+    <span class="n">mean_difference</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mean_agent</span> <span class="o">-</span> <span class="n">mean_baseline</span><span class="p">)</span>
 
-    <span class="n">mean_baseline</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">baseline_returns</span> <span class="p">))</span>
-    <span class="n">mean_agent</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">agent_returns</span> <span class="p">))</span>
-    <span class="n">mean_difference</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">differences</span> <span class="p">))</span>
+    <span class="n">variance_baseline</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">baseline_total_returns</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">variance_agent</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">agent_total_returns</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 
-    <span class="n">sd_difference</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span> <span class="n">differences</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="p">))</span>
-    <span class="n">standard_error</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">sd_difference</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">n</span> <span class="p">))</span>
+    <span class="n">combined_variance</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span>
+        <span class="p">(</span>
+            <span class="n">variance_baseline</span> <span class="o">/</span> <span class="p">(</span><span class="n">n_baseline</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="o">+</span> <span class="n">variance_agent</span> <span class="o">/</span> <span class="p">(</span><span class="n">n_agent</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">combined_standard_deviation</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">combined_variance</span><span class="p">))</span>
+    <span class="n">standard_error</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">combined_variance</span><span class="p">))</span>    
 
-    <span class="c1"># Paired t-test</span>
-    <span class="c1">#    H0: mean difference = 0 (no difference)</span>
-    <span class="c1">#    H1: mean difference &gt; 0 (agents perform better than baseline)</span>
-    <span class="n">ttest_result</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_rel</span><span class="p">(</span><span class="n">agent_returns</span><span class="p">,</span> <span class="n">baseline_returns</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s2">"greater"</span><span class="p">,</span> <span class="p">)</span>
-    <span class="n">t_statistic</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">ttest_result</span><span class="o">.</span><span class="n">statistic</span><span class="p">)</span>
-    <span class="n">p_value_one_sided</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">ttest_result</span><span class="o">.</span><span class="n">pvalue</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">standard_error</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"The standard error is zero; the z-statistic cannot be computed."</span><span class="p">)</span>
+
+    <span class="c1"># Z-test</span>
+    <span class="c1">#    H0: mean_agent - mean_baseline &lt;= 0 (no difference in performance)</span>
+    <span class="c1">#    H1: mean_agent - mean_baseline &gt; 0  (agents perform better than baseline)</span>
+    <span class="n">z_statistic</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mean_difference</span> <span class="o">/</span> <span class="n">standard_error</span><span class="p">)</span>
+    <span class="n">p_value_one_sided</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">sf</span><span class="p">(</span><span class="n">z_statistic</span><span class="p">))</span>
     <span class="n">significant</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">p_value_one_sided</span> <span class="o">&lt;</span> <span class="n">alpha</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="p">{</span>
-        <span class="s2">"N"</span><span class="p">:</span> <span class="n">n</span><span class="p">,</span>
-        <span class="s2">"Degrees of Freedom"</span><span class="p">:</span> <span class="n">df</span><span class="p">,</span>
-        <span class="s2">"Baseline Mean Daily Return"</span><span class="p">:</span> <span class="n">mean_baseline</span><span class="p">,</span>
-        <span class="s2">"Agent Mean Daily Return"</span><span class="p">:</span> <span class="n">mean_agent</span><span class="p">,</span>
-        <span class="s2">"Mean Daily Return Difference"</span><span class="p">:</span> <span class="n">mean_difference</span><span class="p">,</span>
-        <span class="s2">"SD of Paired Differences"</span><span class="p">:</span> <span class="n">sd_difference</span><span class="p">,</span>
-        <span class="s2">"Standard Error"</span><span class="p">:</span><span class="n">standard_error</span><span class="p">,</span>
-        <span class="s2">"t-statistic"</span><span class="p">:</span><span class="n">t_statistic</span><span class="p">,</span>
-        <span class="s2">"One-Sided p-value"</span><span class="p">:</span><span class="n">p_value_one_sided</span><span class="p">,</span>
+        <span class="s2">"N"</span><span class="p">:</span> <span class="n">n_baseline</span><span class="p">,</span>
+        <span class="s2">"Agent N"</span><span class="p">:</span> <span class="n">n_agent</span><span class="p">,</span>
+        <span class="s2">"Baseline Mean Total Return"</span><span class="p">:</span> <span class="n">mean_baseline</span><span class="p">,</span>
+        <span class="s2">"Agent Mean Total Return"</span><span class="p">:</span> <span class="n">mean_agent</span><span class="p">,</span>
+        <span class="s2">"Mean Total Return Difference"</span><span class="p">:</span> <span class="n">mean_difference</span><span class="p">,</span>
+        <span class="s2">"Baseline Total Return Variance"</span><span class="p">:</span> <span class="n">variance_baseline</span><span class="p">,</span>
+        <span class="s2">"Agent Total Return Variance"</span><span class="p">:</span> <span class="n">variance_agent</span><span class="p">,</span>
+        <span class="s2">"Unequal Variance"</span><span class="p">:</span> <span class="n">combined_variance</span><span class="p">,</span>
+        <span class="s2">"Unequal Standard Deviation"</span><span class="p">:</span> <span class="n">combined_standard_deviation</span><span class="p">,</span>        
+        <span class="s2">"z-statistic"</span><span class="p">:</span> <span class="n">z_statistic</span><span class="p">,</span>
+        <span class="s2">"One-Sided p-value"</span><span class="p">:</span> <span class="n">p_value_one_sided</span><span class="p">,</span>
         <span class="s2">"Significant"</span><span class="p">:</span> <span class="n">significant</span><span class="p">,</span>
     <span class="p">}</span>
 
+<span class="c1"># Run z-test for RQ1-RQ4 using cumulative total returns</span>
 <span class="c1"># RQ1: Market Analysis Agent vs Baseline</span>
-<span class="n">rq1_paired_t</span> <span class="o">=</span> <span class="n">run_paired_t_test</span><span class="p">(</span>
-    <span class="n">returns_df</span><span class="o">=</span><span class="p">(</span><span class="n">rq1_returns</span><span class="p">),</span>
+<span class="n">rq1_pooled_z</span> <span class="o">=</span> <span class="n">run_pooled_variance_z_test</span><span class="p">(</span>
+    <span class="n">total_returns_df</span><span class="o">=</span><span class="n">z_rq1_total_returns</span><span class="p">,</span>
     <span class="n">agent_column</span><span class="o">=</span><span class="s2">"MA"</span><span class="p">,</span>
     <span class="n">baseline_column</span><span class="o">=</span><span class="s2">"Baseline"</span><span class="p">,</span>
-    <span class="n">alpha</span><span class="o">=</span><span class="p">(</span><span class="n">PAIRED_T_ALPHA</span><span class="p">),</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="n">Z_TEST_ALPHA</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="c1"># RQ2: Sentiment Analysis Agent vs Baseline</span>
-<span class="n">rq2_paired_t</span> <span class="o">=</span> <span class="n">run_paired_t_test</span><span class="p">(</span>
-    <span class="n">returns_df</span><span class="o">=</span><span class="p">(</span><span class="n">rq2_returns</span><span class="p">),</span>
+<span class="n">rq2_pooled_z</span> <span class="o">=</span> <span class="n">run_pooled_variance_z_test</span><span class="p">(</span>
+    <span class="n">total_returns_df</span><span class="o">=</span><span class="n">z_rq2_total_returns</span><span class="p">,</span>
     <span class="n">agent_column</span><span class="o">=</span><span class="s2">"SM"</span><span class="p">,</span>
     <span class="n">baseline_column</span><span class="o">=</span><span class="s2">"Baseline"</span><span class="p">,</span>
-    <span class="n">alpha</span><span class="o">=</span><span class="p">(</span><span class="n">PAIRED_T_ALPHA</span><span class="p">),</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="n">Z_TEST_ALPHA</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="c1"># RQ3: Risk Management Agent vs Baseline</span>
-<span class="n">rq3_paired_t</span> <span class="o">=</span> <span class="n">run_paired_t_test</span><span class="p">(</span>
-    <span class="n">returns_df</span><span class="o">=</span><span class="p">(</span><span class="n">rq3_returns</span><span class="p">),</span>
+<span class="n">rq3_pooled_z</span> <span class="o">=</span> <span class="n">run_pooled_variance_z_test</span><span class="p">(</span>
+    <span class="n">total_returns_df</span><span class="o">=</span><span class="n">z_rq3_total_returns</span><span class="p">,</span>
     <span class="n">agent_column</span><span class="o">=</span><span class="s2">"RM"</span><span class="p">,</span>
     <span class="n">baseline_column</span><span class="o">=</span><span class="s2">"Baseline"</span><span class="p">,</span>
-    <span class="n">alpha</span><span class="o">=</span><span class="p">(</span><span class="n">PAIRED_T_ALPHA</span><span class="p">),</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="n">Z_TEST_ALPHA</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="c1"># RQ4: Risk-Aware Multi-Agent AI System vs Baseline</span>
-<span class="n">rq4_paired_t</span> <span class="o">=</span> <span class="n">run_paired_t_test</span><span class="p">(</span>
-    <span class="n">returns_df</span><span class="o">=</span><span class="p">(</span><span class="n">rq4_returns</span><span class="p">),</span>
+<span class="n">rq4_pooled_z</span> <span class="o">=</span> <span class="n">run_pooled_variance_z_test</span><span class="p">(</span>
+    <span class="n">total_returns_df</span><span class="o">=</span><span class="n">z_rq4_total_returns</span><span class="p">,</span>
     <span class="n">agent_column</span><span class="o">=</span><span class="s2">"MA+SM+RM"</span><span class="p">,</span>
     <span class="n">baseline_column</span><span class="o">=</span><span class="s2">"Baseline"</span><span class="p">,</span>
-    <span class="n">alpha</span><span class="o">=</span><span class="p">(</span><span class="n">PAIRED_T_ALPHA</span><span class="p">),</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="n">Z_TEST_ALPHA</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="c1"># Create consolidated paired t-test table</span>
-<span class="n">paired_t_test_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<span class="c1"># Consolidated z-test results</span>
+<span class="n">pooled_variance_z_test_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="s2">"RQ"</span><span class="p">:</span> <span class="s2">"RQ1"</span><span class="p">,</span>
-            <span class="s2">"Comparison"</span><span class="p">:</span> <span class="s2">"MA vs Baseline"</span><span class="p">,</span>
-            <span class="o">**</span><span class="n">rq1_paired_t</span><span class="p">,</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">"RQ"</span><span class="p">:</span> <span class="s2">"RQ2"</span><span class="p">,</span>
-            <span class="s2">"Comparison"</span><span class="p">:</span> <span class="s2">"SM vs Baseline"</span><span class="p">,</span>
-            <span class="o">**</span><span class="n">rq2_paired_t</span><span class="p">,</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">"RQ"</span><span class="p">:</span> <span class="s2">"RQ3"</span><span class="p">,</span>
-            <span class="s2">"Comparison"</span><span class="p">:</span> <span class="s2">"RM vs Baseline"</span><span class="p">,</span>
-            <span class="o">**</span><span class="n">rq3_paired_t</span><span class="p">,</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">"RQ"</span><span class="p">:</span> <span class="s2">"RQ4"</span><span class="p">,</span>
-            <span class="s2">"Comparison"</span><span class="p">:</span> <span class="s2">"MA+SM+RM vs Baseline"</span><span class="p">,</span>
-            <span class="o">**</span><span class="n">rq4_paired_t</span><span class="p">,</span>
-        <span class="p">},</span>
+        <span class="p">{</span><span class="s2">"RQ"</span><span class="p">:</span> <span class="s2">"RQ1"</span><span class="p">,</span> <span class="s2">"Comparison"</span><span class="p">:</span> <span class="s2">"MA vs Baseline"</span><span class="p">,</span> <span class="o">**</span><span class="n">rq1_pooled_z</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">"RQ"</span><span class="p">:</span> <span class="s2">"RQ2"</span><span class="p">,</span> <span class="s2">"Comparison"</span><span class="p">:</span> <span class="s2">"SM vs Baseline"</span><span class="p">,</span> <span class="o">**</span><span class="n">rq2_pooled_z</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">"RQ"</span><span class="p">:</span> <span class="s2">"RQ3"</span><span class="p">,</span> <span class="s2">"Comparison"</span><span class="p">:</span> <span class="s2">"RM vs Baseline"</span><span class="p">,</span> <span class="o">**</span><span class="n">rq3_pooled_z</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">"RQ"</span><span class="p">:</span> <span class="s2">"RQ4"</span><span class="p">,</span> <span class="s2">"Comparison"</span><span class="p">:</span> <span class="s2">"MA+SM+RM vs Baseline"</span><span class="p">,</span> <span class="o">**</span><span class="n">rq4_pooled_z</span><span class="p">},</span>
     <span class="p">]</span>
 <span class="p">)</span>
 
-<span class="c1"># Display paired t-test results</span>
+<span class="c1"># Display z-test results</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"PAIRED T-TEST RESULTS - RQ1 TO RQ4"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"POOLED-VARIANCE Z-TEST RESULTS USING CUMULATIVE TOTAL RETURN - RQ1 TO RQ4"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
-
-<span class="n">display</span><span class="p">(</span><span class="n">paired_t_test_results</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">pooled_variance_z_test_results</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -29407,7 +29415,7 @@ C:\Users\yeobp\Desktop\Python\DBA-AIML-Walsh\MS-AIML\Capstone\FinalVersion\data\
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>====================================================================================================
-RQ1-RQ4 PAIRED RETURN TABLES CONSTRUCTED
+RQ1-RQ4 CUMULATIVE TOTAL-RETURN TABLES CONSTRUCTED FOR Z-TEST
 ====================================================================================================
 </pre>
 </div>
@@ -29438,6 +29446,8 @@ RQ1-RQ4 PAIRED RETURN TABLES CONSTRUCTED
 <th>N</th>
 <th>Start Date</th>
 <th>End Date</th>
+<th>Baseline Final Total Return</th>
+<th>Agent Final Total Return</th>
 </tr>
 </thead>
 <tbody>
@@ -29448,6 +29458,8 @@ RQ1-RQ4 PAIRED RETURN TABLES CONSTRUCTED
 <td>302</td>
 <td>2025-05-16</td>
 <td>2026-07-30</td>
+<td>0.015361</td>
+<td>0.077578</td>
 </tr>
 <tr>
 <th>1</th>
@@ -29456,6 +29468,8 @@ RQ1-RQ4 PAIRED RETURN TABLES CONSTRUCTED
 <td>302</td>
 <td>2025-05-16</td>
 <td>2026-07-30</td>
+<td>0.015361</td>
+<td>0.080314</td>
 </tr>
 <tr>
 <th>2</th>
@@ -29464,6 +29478,8 @@ RQ1-RQ4 PAIRED RETURN TABLES CONSTRUCTED
 <td>302</td>
 <td>2025-05-16</td>
 <td>2026-07-30</td>
+<td>0.015361</td>
+<td>0.019899</td>
 </tr>
 <tr>
 <th>3</th>
@@ -29472,6 +29488,8 @@ RQ1-RQ4 PAIRED RETURN TABLES CONSTRUCTED
 <td>302</td>
 <td>2025-05-16</td>
 <td>2026-07-30</td>
+<td>0.015361</td>
+<td>0.022540</td>
 </tr>
 </tbody>
 </table>
@@ -29481,15 +29499,8 @@ RQ1-RQ4 PAIRED RETURN TABLES CONSTRUCTED
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-Return-table columns:
-RQ1: ['Baseline', 'MA', 'Return Difference']
-RQ2: ['Baseline', 'SM', 'Return Difference']
-RQ3: ['Baseline', 'RM', 'Return Difference']
-RQ4: ['Baseline', 'MA+SM+RM', 'Return Difference']
-====================================================================================================
-====================================================================================================
-PAIRED T-TEST RESULTS - RQ1 TO RQ4
+<pre>====================================================================================================
+POOLED-VARIANCE Z-TEST RESULTS USING CUMULATIVE TOTAL RETURN - RQ1 TO RQ4
 ====================================================================================================
 </pre>
 </div>
@@ -29518,13 +29529,15 @@ PAIRED T-TEST RESULTS - RQ1 TO RQ4
 <th>RQ</th>
 <th>Comparison</th>
 <th>N</th>
-<th>Degrees of Freedom</th>
-<th>Baseline Mean Daily Return</th>
-<th>Agent Mean Daily Return</th>
-<th>Mean Daily Return Difference</th>
-<th>SD of Paired Differences</th>
-<th>Standard Error</th>
-<th>t-statistic</th>
+<th>Agent N</th>
+<th>Baseline Mean Total Return</th>
+<th>Agent Mean Total Return</th>
+<th>Mean Total Return Difference</th>
+<th>Baseline Total Return Variance</th>
+<th>Agent Total Return Variance</th>
+<th>Unequal Variance</th>
+<th>Unequal Standard Deviation</th>
+<th>z-statistic</th>
 <th>One-Sided p-value</th>
 <th>Significant</th>
 </tr>
@@ -29535,60 +29548,68 @@ PAIRED T-TEST RESULTS - RQ1 TO RQ4
 <td>RQ1</td>
 <td>MA vs Baseline</td>
 <td>302</td>
-<td>301</td>
-<td>0.000053</td>
-<td>0.000254</td>
-<td>0.000201</td>
-<td>0.004005</td>
-<td>0.000230</td>
-<td>0.872010</td>
-<td>0.191949</td>
-<td>False</td>
+<td>302</td>
+<td>-0.004106</td>
+<td>0.034644</td>
+<td>0.038750</td>
+<td>0.000062</td>
+<td>0.000843</td>
+<td>3.007307e-06</td>
+<td>0.001734</td>
+<td>22.345371</td>
+<td>6.696496e-111</td>
+<td>True</td>
 </tr>
 <tr>
 <th>1</th>
 <td>RQ2</td>
 <td>SM vs Baseline</td>
 <td>302</td>
-<td>301</td>
-<td>0.000053</td>
-<td>0.000264</td>
-<td>0.000211</td>
-<td>0.004470</td>
-<td>0.000257</td>
-<td>0.821143</td>
-<td>0.206107</td>
-<td>False</td>
+<td>302</td>
+<td>-0.004106</td>
+<td>0.052359</td>
+<td>0.056465</td>
+<td>0.000062</td>
+<td>0.001219</td>
+<td>4.257846e-06</td>
+<td>0.002063</td>
+<td>27.364463</td>
+<td>3.633141e-165</td>
+<td>True</td>
 </tr>
 <tr>
 <th>2</th>
 <td>RQ3</td>
 <td>RM vs Baseline</td>
 <td>302</td>
-<td>301</td>
-<td>0.000053</td>
-<td>0.000071</td>
-<td>0.000018</td>
-<td>0.003772</td>
-<td>0.000217</td>
-<td>0.084587</td>
-<td>0.466323</td>
-<td>False</td>
+<td>302</td>
+<td>-0.004106</td>
+<td>0.008026</td>
+<td>0.012132</td>
+<td>0.000062</td>
+<td>0.000111</td>
+<td>5.761921e-07</td>
+<td>0.000759</td>
+<td>15.982760</td>
+<td>8.425820e-58</td>
+<td>True</td>
 </tr>
 <tr>
 <th>3</th>
 <td>RQ4</td>
 <td>MA+SM+RM vs Baseline</td>
 <td>302</td>
-<td>301</td>
-<td>0.000053</td>
-<td>0.000077</td>
-<td>0.000024</td>
-<td>0.003389</td>
-<td>0.000195</td>
-<td>0.125435</td>
-<td>0.450132</td>
-<td>False</td>
+<td>302</td>
+<td>-0.004106</td>
+<td>0.007309</td>
+<td>0.011415</td>
+<td>0.000062</td>
+<td>0.000089</td>
+<td>5.037903e-07</td>
+<td>0.000710</td>
+<td>16.082917</td>
+<td>1.680841e-58</td>
+<td>True</td>
 </tr>
 </tbody>
 </table>
